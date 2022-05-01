@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="출처 : 혼자 공부하는 머신러닝+딥러닝
+인공신경망
+등장시기 : 1943년 즈음 등장
+
+1차 융성시기 ~ 1960년대 후반
+
+로봇이 인간들과 함께 살 것이다 예언
+xor 문제를 해결 못함
+AI 연구의 겨울이 찾아옴
+대안 : 최근접이웃, 결정트리, 서포트벡터머신 등등
+토론"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Chapter 7장"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="출처 : 혼자 공부하는 머신러닝+딥러닝
+인공신경망
+등장시기 : 1943년 즈음 등장
+
+1차 융성시기 ~ 1960년대 후반
+
+로봇이 인간들과 함께 살 것이다 예언
+xor 문제를 해결 못함
+AI 연구의 겨울이 찾아옴
+대안 : 최근접이웃, 결정트리, 서포트벡터머신 등등
+토론"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Chapter 7장 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Chapter 7장</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-04-06
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Python/">#Python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>출처 : 혼자 공부하는 머신러닝+딥러닝</p>
+<h1 id="인공신경망"><a href="#인공신경망" class="headerlink" title="인공신경망"></a>인공신경망</h1><ul>
+<li><p>등장시기 : 1943년 즈음 등장</p>
+</li>
+<li><p>1차 융성시기 ~ 1960년대 후반</p>
+<ul>
+<li>로봇이 인간들과 함께 살 것이다 예언</li>
+<li>xor 문제를 해결 못함</li>
+<li>AI 연구의 겨울이 찾아옴</li>
+<li>대안 : 최근접이웃, 결정트리, 서포트벡터머신 등등</li>
+<li>토론토 대학 AI 연구소 (역전파 알고리즘 개발)</li>
+<li>CNN 알고리즘 등장 (1980년대 후반에 활용)</li>
+</ul>
+</li>
+<li><p>2차 융성시기 ~ 1990년대 후반</p>
+<ul>
+<li>CNN, RNN 알고리즘 등장</li>
+<li>연산 속도 문제 &#x2F; 정확도 문제</li>
+<li>산업계 즉시 활용 어려움</li>
+</ul>
+</li>
+<li><p>3차 융성시기 2012 ~ 현재까지</p>
+<ul>
+<li>GPU 세팅 (그래픽카드)</li>
+<li>연산속도문제 해결</li>
+<li>이세돌 vs 알바고 바둑 대회를 이후로 많이 알려짐 (2017년)</li>
+<li>정부에서도 본격적으로 투자</li>
+<li>사람이 없으니 교육쪽으로 먼저 투자 시작</li>
+<li>대학교육 + 국비교육</li>
+<li>데이터 과학</li>
+</ul>
+</li>
+<li><p>2012년 구글 &#x2F; 아마존</p>
+</li>
+<li><p>CNN 알고리즘 논문 다수 출현</p>
+</li>
+<li><p>이미지 기본 데이터셋</p>
+</li>
+<li><ol>
+<li>기존대비 성능이 좋아야 함</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>기존대비 연산속도가 좋아야 함</li>
+</ol>
+</li>
+<li><p>-&gt; 각자 딥러닝에 관심이 생김</p>
+</li>
+<li><p>-&gt; 공부하는 패턴 : 최우선 순위는 가장 최근 나온 알고리즘</p>
+</li>
+</ul>
+<h3 id="분야가-정말-많음"><a href="#분야가-정말-많음" class="headerlink" title="분야가 정말 많음"></a>분야가 정말 많음</h3><ul>
+<li><p>지도학습 : 분류 &#x2F; 수치 예측(회귀) &#x2F; 비지도학습</p>
+<ul>
+<li>엑셀데이터 (정형데이터)</li>
+<li>기초 통계가 중요 (리포트 형태가 더 중요)</li>
+<li>개발의 상대적 중요성 떨어짐 (성과 측면)</li>
+</ul>
+</li>
+<li><p>딥러닝 : 비정형데이터</p>
+<ul>
+<li>기초통계의 의기마 거의 없음</li>
+<li>개발이 매우 중요 (C, C++, C#)</li>
+<li>웹앱 (안드로이드, iOS)</li>
+<li>텍스트, 음성, 이미지, 영상</li>
+<li>주로 쓰이는 알고리즘 탐색 (최신 알고리즘)</li>
+<li>계속 업그레이드 되고 있음</li>
+</ul>
+</li>
+</ul>
+<h1 id="패션-MNIST"><a href="#패션-MNIST" class="headerlink" title="패션 MNIST"></a>패션 MNIST</h1><h1 id="딥러닝-라이브러리"><a href="#딥러닝-라이브러리" class="headerlink" title="딥러닝 라이브러리"></a>딥러닝 라이브러리</h1><ul>
+<li>텐서플로 : <a target="_blank" rel="noopener" href="https://www.tensorflow.org/">https://www.tensorflow.org/</a><ul>
+<li>2016 텐서플로 1버전 vs 텐서플로 2버전</li>
+<li>문법적으로 매우 다름</li>
+<li>산업용</li>
+</ul>
+</li>
+<li>파이토치 : <a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a><ul>
+<li>연구용</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow
+<span class="token keyword">print</span><span class="token punctuation">(</span>tensorflow<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>2.8.0
+</code></pre>
+<h1 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
+<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span> <span class="token operator">=</span>\
+ keras<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>fashion_mnist<span class="token punctuation">.</span>load_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<ul>
+<li>데이터 확인<ul>
+<li>60,000 이밎, 이미지 크기는 28 x 28</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>train_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> train_target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>(60000, 28, 28) (60000,)
+(10000, 28, 28) (10000,)
+</code></pre>
+<ul>
+<li>이미지 시각화</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+fig<span class="token punctuation">,</span> axs <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> figsize <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  axs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>train_input<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> cmap <span class="token operator">=</span> <span class="token string">'gray_r'</span><span class="token punctuation">)</span>
+  axs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'off'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_10_0.png" alt="png"></p>
+<ul>
+<li>타겟 값 리스트 확인</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">[</span>train_target<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[9, 0, 0, 3, 0, 2, 7, 2, 5, 5]
+</code></pre>
+<ul>
+<li>실제 타겟값의 값을 확인</li>
+<li>각 라벨당 6000개의 이미지 존재</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>unique<span class="token punctuation">(</span>train_target<span class="token punctuation">,</span> return_counts <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>(array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype=uint8), array([6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000, 6000]))
+</code></pre>
+<h1 id="로지스틱-회귀로-패션-아이템-분류"><a href="#로지스틱-회귀로-패션-아이템-분류" class="headerlink" title="로지스틱 회귀로 패션 아이템 분류"></a>로지스틱 회귀로 패션 아이템 분류</h1><ul>
+<li>경사하강법 (기울기)</li>
+<li>전제 조건 : 각 컬럼의 데이터셋 동일 (표준화)</li>
+<li>why 255? 각 픽셀의 값 0 ~ 255 사이의 정숫값을 가진다</li>
+<li>0 ~ 1 사이의 값으로 정규화 시킴</li>
+</ul>
+<pre class=" language-python"><code class="language-python">train_scaled <span class="token operator">=</span> train_input <span class="token operator">/</span> <span class="token number">255.0</span>
+
+<span class="token comment" spellcheck="true"># 1차원 배열로 만들기</span>
+train_scaled <span class="token operator">=</span> train_scaled<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">28</span> <span class="token operator">*</span> <span class="token number">28</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_scaled<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>(60000, 784)
+</code></pre>
+<h2 id="모델-만들기"><a href="#모델-만들기" class="headerlink" title="모델 만들기"></a>모델 만들기</h2><ul>
+<li><p>비정형데이터에 선형모델 또는 비선형모델을 적용시키는 것이 합리적인가?</p>
+<ul>
+<li>결론은 아니다</li>
+<li>다른 대안이 있는가? -&gt; 인공신경망</li>
+</ul>
+</li>
+<li><p>정형데이터에 인공신경망 및 딥러닝 모델을 적용시키는 것이 합리적인가?</p>
+<ul>
+<li>결론은 아니다</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_validate
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> SGDClassifier
+
+sc <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss <span class="token operator">=</span> <span class="token string">'log'</span><span class="token punctuation">,</span> max_iter <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">)</span>
+
+scores <span class="token operator">=</span> cross_validate<span class="token punctuation">(</span>sc<span class="token punctuation">,</span> train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> n_jobs <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>scores<span class="token punctuation">[</span><span class="token string">'test_score'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0.8195666666666668
+</code></pre>
+<h2 id="인공신경망-모델-적용"><a href="#인공신경망-모델-적용" class="headerlink" title="인공신경망 모델 적용"></a>인공신경망 모델 적용</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+train_scaled<span class="token punctuation">,</span> val_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> val_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>train_scaled<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> train_target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>(48000, 784) (48000,)
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> val_target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>(12000, 784) (12000,)
+</code></pre>
+<ul>
+<li><p>밀집하게 연결되어 있는 것을 완전 연결층</p>
+<ul>
+<li>fully connected layer</li>
+</ul>
+</li>
+<li><p>p.354</p>
+<ul>
+<li>이진분류 시그모아드 함수(로지스틱회귀)</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>train_target<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[7 3 5 8 6 9 3 3 9 9]
+</code></pre>
+<pre class=" language-python"><code class="language-python">dense <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation <span class="token operator">=</span> <span class="token string">'softmax'</span><span class="token punctuation">,</span> input_shape <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">784</span><span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
+model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>dense<span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss <span class="token operator">=</span> <span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics <span class="token operator">=</span> <span class="token string">"accuracy"</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.6103 - accuracy: 0.7926
+Epoch 2/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4790 - accuracy: 0.8391
+Epoch 3/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4553 - accuracy: 0.8469
+Epoch 4/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.4459 - accuracy: 0.8527
+Epoch 5/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4379 - accuracy: 0.8537
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7f550e935510&gt;
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>375/375 [==============================] - 1s 1ms/step - loss: 0.4679 - accuracy: 0.8427
+
+
+
+
+
+[0.4678625166416168, 0.8426666855812073]
+</code></pre>
+<h1 id="심층-신경망"><a href="#심층-신경망" class="headerlink" title="심층 신경망"></a>심층 신경망</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
+<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span> <span class="token operator">=</span>\
+ keras<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>fashion_mnist<span class="token punctuation">.</span>load_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+train_scaled <span class="token operator">=</span> train_input <span class="token operator">/</span> <span class="token number">255.0</span>
+train_scaled <span class="token operator">=</span> train_scaled<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token operator">*</span><span class="token number">28</span><span class="token punctuation">)</span>
+
+train_scaled<span class="token punctuation">,</span> val_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> val_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>입력값 및 출력값 층 만들기</li>
+</ul>
+<pre class=" language-python"><code class="language-python">dense1 <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">784</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+dense2 <span class="token operator">=</span> keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'softmax'</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="심층-신경망-1"><a href="#심층-신경망-1" class="headerlink" title="심층 신경망"></a>심층 신경망</h1><pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>dense1<span class="token punctuation">,</span> dense2<span class="token punctuation">]</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Model: &quot;sequential&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense (Dense)               (None, 100)               78500     
+                                                                 
+ dense_1 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<h1 id="층을-추가하는-방법"><a href="#층을-추가하는-방법" class="headerlink" title="층을 추가하는 방법"></a>층을 추가하는 방법</h1><pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">[</span>
+    keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">784</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'hidden'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'softmax'</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'output'</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'패션 MNIST 모델'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Model: &quot;패션 MNIST 모델&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ hidden (Dense)              (None, 100)               78500     
+                                                                 
+ output (Dense)              (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">,</span> input_shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">784</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'softmax'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 4s 2ms/step - loss: 0.5665 - accuracy: 0.8083
+Epoch 2/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.4088 - accuracy: 0.8531
+Epoch 3/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3736 - accuracy: 0.8649
+Epoch 4/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3503 - accuracy: 0.8728
+Epoch 5/5
+1500/1500 [==============================] - 3s 2ms/step - loss: 0.3332 - accuracy: 0.8777
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7fb9d1761310&gt;
+</code></pre>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span>input_shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'relu'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'sigmoid'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation<span class="token operator">=</span><span class="token string">'softmax'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+model<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Model: &quot;sequential_2&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 784)               0         
+                                                                 
+ dense_4 (Dense)             (None, 300)               235500    
+                                                                 
+ dense_5 (Dense)             (None, 100)               30100     
+                                                                 
+ dense_6 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 266,610
+Trainable params: 266,610
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<ul>
+<li><p>옵티마이저의 개념</p>
+</li>
+<li><p>-&gt; Adam</p>
+</li>
+<li><p>-&gt; Why Adam?</p>
+<ul>
+<li>스텝방향 &amp; 스텝사이즈를 모두 고려한 옵티마이저</li>
+<li>스텝방향 : GD, SGD, Momentum, NAG</li>
+<li>스텝사이즈 : GD, SGD, Adagrad, RMSProp</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span> <span class="token operator">=</span> keras<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>fashion_mnist<span class="token punctuation">.</span>load_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+train_scaled <span class="token operator">=</span> train_input <span class="token operator">/</span> <span class="token number">255.0</span>
+
+train_scaled<span class="token punctuation">,</span> val_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> val_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.5123 - accuracy: 0.8150
+Epoch 2/5
+1500/1500 [==============================] - 7s 5ms/step - loss: 0.3761 - accuracy: 0.8618
+Epoch 3/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3406 - accuracy: 0.8757
+Epoch 4/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3184 - accuracy: 0.8835
+Epoch 5/5
+1500/1500 [==============================] - 7s 5ms/step - loss: 0.3046 - accuracy: 0.8880
+
+
+
+
+
+&lt;keras.callbacks.History at 0x7fee13c9ce90&gt;
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>375/375 [==============================] - 1s 2ms/step - loss: 0.3488 - accuracy: 0.8763
+
+
+
+
+
+[0.3487585186958313, 0.8763333559036255]
+</code></pre>
+<h1 id="옵티마이저"><a href="#옵티마이저" class="headerlink" title="옵티마이저"></a>옵티마이저</h1><ul>
+<li>p.381</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer<span class="token operator">=</span><span class="token string">'sgd'</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">sgd <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>SGD<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer<span class="token operator">=</span>sgd<span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>p.382<ul>
+<li>learning_rate &#x3D; 0.1</li>
+<li>랜덤서치, 그리드서치</li>
+<li>딥러닝에서도 하이퍼파라미터 튜닝</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python">sgd <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>SGD<span class="token punctuation">(</span>learning_rate <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+sgd <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>SGD<span class="token punctuation">(</span>momentum <span class="token operator">=</span> <span class="token number">0.9</span><span class="token punctuation">,</span> nesterov <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>Adagrad() 클래스</li>
+</ul>
+<pre class=" language-python"><code class="language-python">adagrad <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>Adagrad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer <span class="token operator">=</span> adagrad<span class="token punctuation">,</span> loss <span class="token operator">=</span> <span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics <span class="token operator">=</span> <span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">rmsprop <span class="token operator">=</span> keras<span class="token punctuation">.</span>optimizers<span class="token punctuation">.</span>RMSprop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer <span class="token operator">=</span> rmsprop<span class="token punctuation">,</span> loss <span class="token operator">=</span> <span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics <span class="token operator">=</span> <span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.2941 - accuracy: 0.8919
+Epoch 2/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.2862 - accuracy: 0.8948
+Epoch 3/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.2795 - accuracy: 0.8971
+Epoch 4/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.2738 - accuracy: 0.9013
+Epoch 5/5
+1500/1500 [==============================] - 8s 5ms/step - loss: 0.2677 - accuracy: 0.9043
+375/375 [==============================] - 1s 2ms/step - loss: 0.3483 - accuracy: 0.8852
+
+
+
+
+
+[0.348256915807724, 0.8852499723434448]
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer <span class="token operator">=</span> <span class="token string">'adam'</span><span class="token punctuation">,</span> loss <span class="token operator">=</span> <span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics <span class="token operator">=</span> <span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>evaluate<span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 7s 4ms/step - loss: 0.2590 - accuracy: 0.9050
+Epoch 2/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2423 - accuracy: 0.9095
+Epoch 3/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2308 - accuracy: 0.9155
+Epoch 4/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.2192 - accuracy: 0.9187
+Epoch 5/5
+1500/1500 [==============================] - 7s 5ms/step - loss: 0.2097 - accuracy: 0.9224
+375/375 [==============================] - 1s 2ms/step - loss: 0.3270 - accuracy: 0.8886
+
+
+
+
+
+[0.3270145654678345, 0.8885833621025085]
+</code></pre>
+<h1 id="손실곡선"><a href="#손실곡선" class="headerlink" title="손실곡선"></a>손실곡선</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+<span class="token punctuation">(</span>train_input<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>test_input<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span> <span class="token operator">=</span> \
+    keras<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>fashion_mnist<span class="token punctuation">.</span>load_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+train_scaled <span class="token operator">=</span> train_input <span class="token operator">/</span> <span class="token number">255.0</span>
+
+train_scaled<span class="token punctuation">,</span> val_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> val_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-labels-idx1-ubyte.gz
+32768/29515 [=================================] - 0s 0us/step
+40960/29515 [=========================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/train-images-idx3-ubyte.gz
+26427392/26421880 [==============================] - 0s 0us/step
+26435584/26421880 [==============================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-labels-idx1-ubyte.gz
+16384/5148 [===============================================================================================] - 0s 0us/step
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/t10k-images-idx3-ubyte.gz
+4423680/4422102 [==============================] - 0s 0us/step
+4431872/4422102 [==============================] - 0s 0us/step
+</code></pre>
+<ul>
+<li>사용자 정의함수를 작성함</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">model_fn</span><span class="token punctuation">(</span>a_layer <span class="token operator">=</span> None<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  model <span class="token operator">=</span> keras<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Flatten<span class="token punctuation">(</span>input_shape <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">28</span><span class="token punctuation">,</span> <span class="token number">28</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> activation <span class="token operator">=</span> <span class="token string">'relu'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> a_layer <span class="token punctuation">:</span>
+    model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>a_layer<span class="token punctuation">)</span>
+  model<span class="token punctuation">.</span>add<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dense<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> activation <span class="token operator">=</span> <span class="token string">'softmax'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> model
+</code></pre>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Model: &quot;sequential_2&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten_2 (Flatten)         (None, 784)               0         
+                                                                 
+ dense_2 (Dense)             (None, 100)               78500     
+                                                                 
+ dense_3 (Dense)             (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss <span class="token operator">=</span> <span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics <span class="token operator">=</span> <span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> verbose <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/5
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.5253 - accuracy: 0.8141
+Epoch 2/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3896 - accuracy: 0.8579
+Epoch 3/5
+1500/1500 [==============================] - 5s 4ms/step - loss: 0.3535 - accuracy: 0.8733
+Epoch 4/5
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3302 - accuracy: 0.8822
+Epoch 5/5
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3149 - accuracy: 0.8884
+</code></pre>
+<ul>
+<li>history 객체 무슨 값이 있나?</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>dict_keys([&#39;loss&#39;, &#39;accuracy&#39;])
+</code></pre>
+<ul>
+<li>그래프 작성</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_64_0.png" alt="png"></p>
+<ul>
+<li>정확도 출력</li>
+</ul>
+<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'accuracy'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_66_0.png" alt="png"></p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_67_0.png" alt="png"></p>
+<ul>
+<li>검증손실</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> 
+                    validation_data<span class="token operator">=</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'val_loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">,</span> <span class="token string">'val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Epoch 1/10
+1500/1500 [==============================] - 7s 4ms/step - loss: 0.5274 - accuracy: 0.8118 - val_loss: 0.4030 - val_accuracy: 0.8554
+Epoch 2/10
+1500/1500 [==============================] - 6s 4ms/step - loss: 0.3880 - accuracy: 0.8618 - val_loss: 0.4002 - val_accuracy: 0.8574
+Epoch 3/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3517 - accuracy: 0.8735 - val_loss: 0.3739 - val_accuracy: 0.8672
+Epoch 4/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.3322 - accuracy: 0.8826 - val_loss: 0.3538 - val_accuracy: 0.8768
+Epoch 5/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3195 - accuracy: 0.8872 - val_loss: 0.3701 - val_accuracy: 0.8774
+Epoch 6/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.3066 - accuracy: 0.8906 - val_loss: 0.3529 - val_accuracy: 0.8789
+Epoch 7/10
+1500/1500 [==============================] - 4s 3ms/step - loss: 0.2964 - accuracy: 0.8941 - val_loss: 0.3622 - val_accuracy: 0.8824
+Epoch 8/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2876 - accuracy: 0.8989 - val_loss: 0.3963 - val_accuracy: 0.8748
+Epoch 9/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2815 - accuracy: 0.9018 - val_loss: 0.3933 - val_accuracy: 0.8762
+Epoch 10/10
+1500/1500 [==============================] - 5s 3ms/step - loss: 0.2741 - accuracy: 0.9033 - val_loss: 0.4155 - val_accuracy: 0.8740
+</code></pre>
+<p><img src="/images/Chapter_7/output_69_1.png" alt="png"></p>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer <span class="token operator">=</span> <span class="token string">'adam'</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 과적합이 일어나는지 확인하는 코드</span>
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> 
+                    validation_data<span class="token operator">=</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'val_loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">,</span> <span class="token string">'val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_70_0.png" alt="png"></p>
+<h1 id="드롭아웃"><a href="#드롭아웃" class="headerlink" title="드롭아웃"></a>드롭아웃</h1><ul>
+<li>제프리 힌턴</li>
+<li>기본적으로는 모든 파라미터를 연산하는 것이 원칙<ul>
+<li>그런데, 일부 뉴런에서 출력이 없는 뉴런 발생</li>
+<li>기본 일부 뉴런은 계산에서 제외 시킴</li>
+</ul>
+</li>
+<li>인공신경망 (뇌과학)<ul>
+<li>값이 쏠림 현상 -&gt; 뇌에 피가 고인 현상과 비슷함 &#x3D; 뇌출혈</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>summary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Model: &quot;sequential_10&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten_10 (Flatten)        (None, 784)               0         
+                                                                 
+ dense_18 (Dense)            (None, 100)               78500     
+                                                                 
+ dropout_1 (Dropout)         (None, 100)               0         
+                                                                 
+ dense_19 (Dense)            (None, 10)                1010      
+                                                                 
+=================================================================
+Total params: 79,510
+Trainable params: 79,510
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer <span class="token operator">=</span> <span class="token string">'adam'</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 과적합이 일어나는지 확인하는 코드</span>
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> 
+                    validation_data<span class="token operator">=</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'val_loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">,</span> <span class="token string">'val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p>![png]&#x2F;images&#x2F;Chapter_7&#x2F;output_73_0.png)</p>
+<h1 id="모델-저장과-복원"><a href="#모델-저장과-복원" class="headerlink" title="모델 저장과 복원"></a>모델 저장과 복원</h1><ul>
+<li><p>개발자 : 정확도는 중요하지 않음</p>
+<ul>
+<li>딥러닝 모델을 활용해서 웹앱을 개발</li>
+</ul>
+</li>
+<li><p>분석가 &amp; 머신러닝 엔지니어 : 캐글 대회 (정확도 검증 필수)</p>
+</li>
+<li><p>모델 저장</p>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model<span class="token punctuation">.</span>save_weights<span class="token punctuation">(</span><span class="token string">'model-weights.h5'</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'model-whole.h5'</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>모델 불러오기</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>load_weights<span class="token punctuation">(</span><span class="token string">'model-weights.h5'</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+val_labels <span class="token operator">=</span> np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>val_scaled<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>val_labels <span class="token operator">==</span> val_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0.8864166666666666
+</code></pre>
+<h1 id="콜백"><a href="#콜백" class="headerlink" title="콜백"></a>콜백</h1><ul>
+<li>p.408</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer<span class="token operator">=</span><span class="token string">'adam'</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> 
+              metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+checkpoint_cb <span class="token operator">=</span> keras<span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span>ModelCheckpoint<span class="token punctuation">(</span><span class="token string">'best-model.h5'</span><span class="token punctuation">,</span> 
+                                                save_best_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> 
+          validation_data<span class="token operator">=</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span><span class="token punctuation">,</span>
+          callbacks<span class="token operator">=</span><span class="token punctuation">[</span>checkpoint_cb<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>&lt;keras.callbacks.History at 0x7fe3dec2add0&gt;
+</code></pre>
+<ul>
+<li>EarlyStopping<ul>
+<li>조기 종료</li>
+<li>에포크를 많이 주면 많이 줄수록 성능 (가중치 업데이터 &#x2F; 기울기가 계속 미분)이 좋아야 하는 것이 원리</li>
+<li>에포크 100 &#x2F; 50 에포크 시점과 90 에포크 시점 성능 차이가 없음</li>
+<li>성능 개선이 없는 시점에선 더이상 실행 할 필요가 없음</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python">model <span class="token operator">=</span> model_fn<span class="token punctuation">(</span>keras<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>Dropout<span class="token punctuation">(</span><span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+model<span class="token punctuation">.</span>compile<span class="token punctuation">(</span>optimizer<span class="token operator">=</span><span class="token string">'adam'</span><span class="token punctuation">,</span> loss<span class="token operator">=</span><span class="token string">'sparse_categorical_crossentropy'</span><span class="token punctuation">,</span> 
+              metrics<span class="token operator">=</span><span class="token string">'accuracy'</span><span class="token punctuation">)</span>
+
+checkpoint_cb <span class="token operator">=</span> keras<span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span>ModelCheckpoint<span class="token punctuation">(</span><span class="token string">'best-model.h5'</span><span class="token punctuation">,</span> 
+                                                save_best_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+early_stopping_cb <span class="token operator">=</span> keras<span class="token punctuation">.</span>callbacks<span class="token punctuation">.</span>EarlyStopping<span class="token punctuation">(</span>patience<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>
+                                                  restore_best_weights<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+history <span class="token operator">=</span> model<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> verbose<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> 
+                    validation_data<span class="token operator">=</span><span class="token punctuation">(</span>val_scaled<span class="token punctuation">,</span> val_target<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    callbacks<span class="token operator">=</span><span class="token punctuation">[</span>checkpoint_cb<span class="token punctuation">,</span> early_stopping_cb<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>history<span class="token punctuation">.</span>history<span class="token punctuation">[</span><span class="token string">'val_loss'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'epoch'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'loss'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'train'</span><span class="token punctuation">,</span> <span class="token string">'val'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_7/output_84_0.png" alt="png"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

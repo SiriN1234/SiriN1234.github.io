@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="조언
+머신러닝 &amp;#x2F; 딥러닝
+-&amp;gt; 수학을 잘 하는 사람 vs 수학을 처음 하는 사람
+-&amp;gt; 머신러닝 &amp;#x2F; 딥러닝 (인간이 만든 수식)
+-&amp;gt; 개념을 이해하고, 수식을 이해하고, 코드로 그 수식을 구현하면 잘 할 수 있음
+-&amp;gt; 머신러닝과 딥"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="2022.03.23 수업내용과 실습1"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="조언
+머신러닝 &amp;#x2F; 딥러닝
+-&amp;gt; 수학을 잘 하는 사람 vs 수학을 처음 하는 사람
+-&amp;gt; 머신러닝 &amp;#x2F; 딥러닝 (인간이 만든 수식)
+-&amp;gt; 개념을 이해하고, 수식을 이해하고, 코드로 그 수식을 구현하면 잘 할 수 있음
+-&amp;gt; 머신러닝과 딥"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>2022.03.23 수업내용과 실습1 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>2022.03.23 수업내용과 실습1</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-03-23
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Python/">#Python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="조언"><a href="#조언" class="headerlink" title="조언"></a>조언</h1><ul>
+<li>머신러닝 &#x2F; 딥러닝</li>
+<li>-&gt; 수학을 잘 하는 사람 vs 수학을 처음 하는 사람</li>
+<li>-&gt; 머신러닝 &#x2F; 딥러닝 (인간이 만든 수식)</li>
+<li>-&gt; 개념을 이해하고, 수식을 이해하고, 코드로 그 수식을 구현하면 잘 할 수 있음</li>
+<li>-&gt; 머신러닝과 딥러닝을 쓰기 위해서는 수학자만 해야되냐!?</li>
+<li>-&gt; 결론은 X</li>
+<li>-&gt; 머신러닝 &#x2F; 딥러닝의 주 목적이 인간 생활에 보편적인 문제 해결을 위해서 나온 것임</li>
+<li>-&gt; 프레임워크 형태로 나옴 (개념은 이해하고 있어야함) –&gt; 개념만 문자열 타입으로 매개변수를 잘 조정만 하면 모델이 만들어짐</li>
+<li>-&gt; 성과를 내야하는데 (개발자는 배포를 잘해야 함)<ul>
+<li>이미지 인식 모델을 만듬 &#x2F; 쓸데가 없음 &#x2F; 안드로이드 앱 &#x2F; 웹앱에 탑재할줄만 알아도 충분</li>
+<li>기획 (어떤 문제를 풀까?)</li>
+</ul>
+</li>
+<li>-&gt; AutoML<ul>
+<li>코드를 4-5줄 치면 머신러닝 모델이 만들어짐</li>
+</ul>
+</li>
+</ul>
+<p>파이썬 라이브러리 설치 방법 (vs R)</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># R</span>
+<span class="token comment" spellcheck="true"># install.packages("패키지명")</span>
+
+<span class="token comment" spellcheck="true"># 파이썬 라이브러리 설치 코드에서 실행 X</span>
+<span class="token comment" spellcheck="true"># 터미널에서 설치</span>
+<span class="token comment" spellcheck="true"># 방법 1. conda 설치</span>
+<span class="token comment" spellcheck="true"># --> 아나콘다 설치 후, conda 설치 (주 사용목적 : 데이터 과학)</span>
+<span class="token comment" spellcheck="true"># conda에서 라이브러리 관리 (버전 업데이트가 조금 느림)</span>
+
+<span class="token comment" spellcheck="true"># 방법 2. pip 설치 (주 사용 목적 : 개발 + 데이터 과학 + 그외)</span>
+<span class="token comment" spellcheck="true"># --> 아나콘다 설치 안함 / 파이썬만 설치</span>
+
+<span class="token comment" spellcheck="true"># git bash 열고 하면 됨</span>
+<span class="token comment" spellcheck="true"># pip install numpy</span>
+</code></pre>
+<h1 id="Numpy-라이브-불러오기"><a href="#Numpy-라이브-불러오기" class="headerlink" title="Numpy 라이브 불러오기"></a>Numpy 라이브 불러오기</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>1.21.5
+</code></pre>
+<h1 id="배열로-바꾸는-작업"><a href="#배열로-바꾸는-작업" class="headerlink" title="배열로 바꾸는 작업"></a>배열로 바꾸는 작업</h1><ul>
+<li>1부터 10까지의 리스트를 만든다</li>
+<li>NumPy 배열로 변환해서 저장한다</li>
+</ul>
+<pre class=" language-python"><code class="language-python">temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span>
+arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[ 1  2  3  4  5  6  7  8  9 10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span> <span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>&lt;class &#39;list&#39;&gt;
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</code></pre>
+<ul>
+<li>arr 배열 숫자 5 출력</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[5 6 7 8]
+</code></pre>
+<ul>
+<li>NumPy를 이용하여 기초 통계 함수를 이용한다.</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>median<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>std<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 표준편차</span>
+</code></pre>
+<pre><code>5.5
+55
+5.5
+2.8722813232690143
+</code></pre>
+<h2 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h2><pre class=" language-python"><code class="language-python">math_scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">88</span><span class="token punctuation">]</span>
+english_scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">]</span>
+
+total_scores <span class="token operator">=</span> math_scores <span class="token operator">+</span> english_scores
+<span class="token keyword">print</span><span class="token punctuation">(</span>total_scores<span class="token punctuation">)</span>
+
+math_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>math_scores<span class="token punctuation">)</span>
+english_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>english_scores<span class="token punctuation">)</span>
+
+total_scores <span class="token operator">=</span> math_arr <span class="token operator">+</span> english_arr
+<span class="token keyword">print</span><span class="token punctuation">(</span>total_scores<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[90, 80, 88, 80, 70, 90]
+[170 150 178]
+</code></pre>
+<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>min<span class="token punctuation">(</span>total_scores<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>150
+</code></pre>
+<pre class=" language-python"><code class="language-python">np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>total_scores<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>178
+</code></pre>
+<pre class=" language-python"><code class="language-python">math_scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+english_scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+
+math_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>math_scores<span class="token punctuation">)</span>
+english_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>english_scores<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 사칙연산</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"덧셈 : "</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>add<span class="token punctuation">(</span>math_arr<span class="token punctuation">,</span> english_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"뺄셈 : "</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>subtract<span class="token punctuation">(</span>math_arr<span class="token punctuation">,</span> english_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"곱셈 : "</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>math_arr<span class="token punctuation">,</span> english_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"나눗셈 : "</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>divide<span class="token punctuation">(</span>math_arr<span class="token punctuation">,</span> english_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"거듭제곱 : "</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>math_arr<span class="token punctuation">,</span> english_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>덧셈 :  [3 5 7]
+뺄셈 :  [1 1 1]
+곱셈 :  [ 2  6 12]
+나눗셈 :  [2.         1.5        1.33333333]
+거듭제곱 :  [ 2  9 64]
+</code></pre>
+<h2 id="배열의-생성"><a href="#배열의-생성" class="headerlink" title="배열의 생성"></a>배열의 생성</h2><ul>
+<li>0차원부터 3차원까지 생성하는 방법</li>
+</ul>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+</code></pre>
+<pre><code>20
+&lt;class &#39;numpy.ndarray&#39;&gt;
+()
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1차원 배열</span>
+temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 차원을 확인하는 함수</span>
+</code></pre>
+<pre><code>[1 2 3]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(3,)
+1
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 2차원 배열</span>
+temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[1 2 3]
+ [4 5 6]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(2, 3)
+2
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 3차원 배열</span>
+temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[[1 2 3]
+  [4 5 6]]
+
+ [[1 2 3]
+  [4 5 6]]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(2, 2, 3)
+3
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> ndmin <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[1 2 3 4]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(1, 4)
+2
+</code></pre>
+<h2 id="소숫점-정렬"><a href="#소숫점-정렬" class="headerlink" title="소숫점 정렬"></a>소숫점 정렬</h2><pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>trunc<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23</span><span class="token punctuation">,</span> <span class="token number">1.23</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([-1.,  1.])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>fix<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23</span><span class="token punctuation">,</span> <span class="token number">1.23</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([-1.,  1.])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>around<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23456</span><span class="token punctuation">,</span> <span class="token number">1.23456</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([-1.2346,  1.2346])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>round<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23456</span><span class="token punctuation">,</span> <span class="token number">1.23456</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([-1.2346,  1.2346])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>floor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23456</span><span class="token punctuation">,</span> <span class="token number">1.23456</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 소숫점을 내림</span>
+temp_arr
+</code></pre>
+<pre><code>array([-2.,  1.])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1.23456</span><span class="token punctuation">,</span> <span class="token number">1.23456</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 소숫점을 올림</span>
+temp_arr
+</code></pre>
+<pre><code>array([-1.,  2.])
+</code></pre>
+<ul>
+<li>shape는 높이 * 세로 * 가로 순인가?</li>
+<li>axis 축 설정</li>
+</ul>
+<h1 id="배열을-생성하는-다양한-방법들"><a href="#배열을-생성하는-다양한-방법들" class="headerlink" title="배열을 생성하는 다양한 방법들"></a>배열을 생성하는 다양한 방법들</h1><pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([0, 1, 2, 3, 4])
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([ 1,  4,  7, 10])
+</code></pre>
+<pre class=" language-python"><code class="language-python">zero_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>zero_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>zero_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>zero_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>zero_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>zero_arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[0. 0. 0.]
+ [0. 0. 0.]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(2, 3)
+2
+float64
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype <span class="token operator">=</span> <span class="token string">"int32"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[1 1 1 1 1]
+ [1 1 1 1 1]
+ [1 1 1 1 1]
+ [1 1 1 1 1]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(4, 5)
+2
+int32
+</code></pre>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype <span class="token operator">=</span> <span class="token string">"int32"</span><span class="token punctuation">)</span>
+temp_res_arr <span class="token operator">=</span> temp_arr<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_res_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>temp_res_arr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_res_arr<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 배열의 크기를 보여주는 함수</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_res_arr<span class="token punctuation">.</span>ndim<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>temp_res_arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+(8, 18)
+2
+int32
+</code></pre>
+<h1 id="numpy-조건식"><a href="#numpy-조건식" class="headerlink" title="numpy 조건식"></a>numpy 조건식</h1><pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+temp_arr
+</code></pre>
+<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 5보다 작은 값은 원래 값으로 반환</span>
+<span class="token comment" spellcheck="true"># 5보다 큰 값은 원래 값 * 10으로 반환</span>
+np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>temp_arr <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">,</span> temp_arr<span class="token punctuation">,</span> temp_arr <span class="token operator">*</span><span class="token number">10</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>array([ 0,  1,  2,  3,  4, 50, 60, 70, 80, 90])
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 0~100까지의 배열을 만들고, 50보다 작은 값은 곱하기 10, 나머지는 원래 값으로 반환</span>
+temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>temp_arr <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">,</span> temp_arr <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">,</span> temp_arr<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>array([  0,  10,  20,  30,  40,  50,  60,  70,  80,  90, 100, 110, 120,
+       130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250,
+       260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380,
+       390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490,  50,  51,
+        52,  53,  54,  55,  56,  57,  58,  59,  60,  61,  62,  63,  64,
+        65,  66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,
+        78,  79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89,  90,
+        91,  92,  93,  94,  95,  96,  97,  98,  99, 100])
+</code></pre>
+<ul>
+<li>np.select</li>
+</ul>
+<pre class=" language-python"><code class="language-python">temp_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+temp_arr
+
+<span class="token comment" spellcheck="true"># 5보다 큰 곱하기 2, 2보다 작은 값은 더하기 100</span>
+</code></pre>
+<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre>
+<pre class=" language-python"><code class="language-python">condlist <span class="token operator">=</span> <span class="token punctuation">[</span>temp_arr <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">,</span> temp_arr <span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">]</span>
+choielist <span class="token operator">=</span> <span class="token punctuation">[</span>temp_arr <span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">,</span> temp_arr <span class="token operator">+</span> <span class="token number">100</span><span class="token punctuation">]</span>
+np<span class="token punctuation">.</span>select<span class="token punctuation">(</span>condlist<span class="token punctuation">,</span> choielist<span class="token punctuation">,</span> default <span class="token operator">=</span> temp_arr<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>array([100, 101,   2,   3,   4,   5,  12,  14,  16,  18])
+</code></pre>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

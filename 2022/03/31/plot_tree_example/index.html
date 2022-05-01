@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="목표
+sklear.tree.plot_tree의 색상을 변경해보자
+
+!pip install -U matplotlib
+
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages ("/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="플롯 트리 연습"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="목표
+sklear.tree.plot_tree의 색상을 변경해보자
+
+!pip install -U matplotlib
+
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages ("/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>플롯 트리 연습 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>플롯 트리 연습</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-03-31
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Python/">#Python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h1><ul>
+<li>sklear.tree.plot_tree의 색상을 변경해보자</li>
+</ul>
+<pre class=" language-python"><code class="language-python">!pip install <span class="token operator">-</span>U matplotlib
+</code></pre>
+<pre><code>Requirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages (3.2.2)
+Collecting matplotlib
+  Downloading matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+[K     |████████████████████████████████| 11.2 MB 5.0 MB/s 
+[?25hRequirement already satisfied: pyparsing&gt;=2.2.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (3.0.7)
+Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (1.21.5)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (21.3)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (1.4.0)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (7.1.2)
+Collecting fonttools&gt;=4.22.0
+  Downloading fonttools-4.31.2-py3-none-any.whl (899 kB)
+[K     |████████████████████████████████| 899 kB 49.1 MB/s 
+[?25hRequirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.7/dist-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.7/dist-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib) (3.10.0.2)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.7/dist-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.15.0)
+Installing collected packages: fonttools, matplotlib
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.2.2
+    Uninstalling matplotlib-3.2.2:
+      Successfully uninstalled matplotlib-3.2.2
+[31mERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+albumentations 0.1.12 requires imgaug&lt;0.2.7,&gt;=0.2.5, but you have imgaug 0.2.9 which is incompatible.[0m
+Successfully installed fonttools-4.31.2 matplotlib-3.5.1
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>matplotlib inline 
+
+<span class="token keyword">import</span> sklearn
+<span class="token keyword">print</span><span class="token punctuation">(</span>sklearn<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+<span class="token keyword">import</span> matplotlib
+<span class="token keyword">print</span><span class="token punctuation">(</span>matplotlib<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 필수 라이브러리 불러오기</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_iris
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> tree 
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token comment" spellcheck="true"># 데이터 불러오기</span>
+iris <span class="token operator">=</span> load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"feature names"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class names"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 모형 학습 및 plot_tree 그래프 구현</span>
+dt <span class="token operator">=</span> tree<span class="token punctuation">.</span>DecisionTreeClassifier<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+dt<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">)</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> tree<span class="token punctuation">.</span>plot_tree<span class="token punctuation">(</span>dt<span class="token punctuation">,</span> max_depth <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> feature_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">,</span> class_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>1.0.2
+3.5.1
+(150, 4) (150,)
+feature names [&#39;sepal length (cm)&#39;, &#39;sepal width (cm)&#39;, &#39;petal length (cm)&#39;, &#39;petal width (cm)&#39;]
+class names [&#39;setosa&#39; &#39;versicolor&#39; &#39;virginica&#39;]
+</code></pre>
+<p><img src="/images/plot_tree_example/output_2_1.png" alt="png"></p>
+<h1 id="plot-tree-내부-구조-파악"><a href="#plot-tree-내부-구조-파악" class="headerlink" title="plot_tree 내부 구조 파악"></a>plot_tree 내부 구조 파악</h1><ul>
+<li>Annotation 클래스인 것 확인<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>matplotlib inline
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> tree<span class="token punctuation">.</span>plot_tree<span class="token punctuation">(</span>dt<span class="token punctuation">,</span> max_depth <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> 
+                    filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> 
+                    feature_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">,</span> 
+                    class_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>ax<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>type<span class="token punctuation">(</span>ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+&lt;class &#39;matplotlib.text.Annotation&#39;&gt;
+</code></pre>
+<p><img src="/images/plot_tree_example/output_4_1.png" alt="png"></p>
+<h1 id="get-bbox-patch"><a href="#get-bbox-patch" class="headerlink" title="get_bbox_patch()"></a>get_bbox_patch()</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"impurity"</span><span class="token punctuation">,</span> dt<span class="token punctuation">.</span>tree_<span class="token punctuation">.</span>impurity<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"--"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"value"</span><span class="token punctuation">,</span> dt<span class="token punctuation">.</span>tree_<span class="token punctuation">.</span>value<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>impurity [0.66666667 0.         0.5       ]
+--
+value [[[50. 50. 50.]]
+
+ [[50.  0.  0.]]
+
+ [[ 0. 50. 50.]]]
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np 
+
+colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"indigo"</span><span class="token punctuation">,</span> <span class="token string">"violet"</span><span class="token punctuation">,</span> <span class="token string">"crimson"</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>colors<span class="token punctuation">[</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>colors<span class="token punctuation">[</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>colors<span class="token punctuation">[</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>colors<span class="token punctuation">[</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>crimson
+indigo
+violet
+indigo
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib<span class="token punctuation">.</span>colors <span class="token keyword">import</span> to_rgb
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token operator">%</span>matplotlib inline
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> tree<span class="token punctuation">.</span>plot_tree<span class="token punctuation">(</span>dt<span class="token punctuation">,</span> max_depth <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> 
+                    filled<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> 
+                    feature_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">,</span> 
+                    class_names <span class="token operator">=</span> iris<span class="token punctuation">.</span>target_names<span class="token punctuation">)</span>
+
+i <span class="token operator">=</span> <span class="token number">0</span>
+colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"yellow"</span><span class="token punctuation">,</span> <span class="token string">"violet"</span><span class="token punctuation">,</span> <span class="token string">"lavenderblush"</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> artist<span class="token punctuation">,</span> impurity<span class="token punctuation">,</span> value <span class="token keyword">in</span> zip<span class="token punctuation">(</span>ax<span class="token punctuation">,</span> dt<span class="token punctuation">.</span>tree_<span class="token punctuation">.</span>impurity<span class="token punctuation">,</span> dt<span class="token punctuation">.</span>tree_<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b <span class="token operator">=</span> to_rgb<span class="token punctuation">(</span>colors<span class="token punctuation">[</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true"># 코드가 길어서 i로 재 저장</span>
+  ip <span class="token operator">=</span> impurity
+  <span class="token comment" spellcheck="true"># print(ip + (1-ip)*r, ip + (1-ip)*g, ip + (1-ip)*b)</span>
+  <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># set_boxtyle 적용</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_boxstyle<span class="token punctuation">(</span><span class="token string">"round"</span><span class="token punctuation">,</span> pad<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">)</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_facecolor<span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>r<span class="token punctuation">,</span> ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>g<span class="token punctuation">,</span> ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_edgecolor<span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span>  
+  <span class="token keyword">else</span><span class="token punctuation">:</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_boxstyle<span class="token punctuation">(</span><span class="token string">"circle"</span><span class="token punctuation">,</span> pad<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">)</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_facecolor<span class="token punctuation">(</span><span class="token punctuation">(</span>ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>r<span class="token punctuation">,</span> ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>g<span class="token punctuation">,</span> ip <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>ip<span class="token punctuation">)</span><span class="token operator">*</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ax<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>get_bbox_patch<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_edgecolor<span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span>   
+  i <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+</code></pre>
+<p><img src="/images/plot_tree_example/output_8_0.png" alt="png"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

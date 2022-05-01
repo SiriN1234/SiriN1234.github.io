@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="모수와 통계량
+분산값이 크다 -&amp;gt; 평균으로부터 멀어진 개별적인 데이터가 많다
+분산값이 작다 -&amp;gt; 평균 주위에 개별적인 데이터가 많다
+
+기술통계량(Descriptive Analysis)
+최대, 최소, 평균, 중간값, 분산, 표준편차
+
+앨범 판매량 데이터
+adv"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Basic Statistics"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="모수와 통계량
+분산값이 크다 -&amp;gt; 평균으로부터 멀어진 개별적인 데이터가 많다
+분산값이 작다 -&amp;gt; 평균 주위에 개별적인 데이터가 많다
+
+기술통계량(Descriptive Analysis)
+최대, 최소, 평균, 중간값, 분산, 표준편차
+
+앨범 판매량 데이터
+adv"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Basic Statistics - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Basic Statistics</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-03-17
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/R/">#R</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="모수와-통계량"><a href="#모수와-통계량" class="headerlink" title="모수와 통계량"></a>모수와 통계량</h2><ul>
+<li>분산값이 크다 -&gt; 평균으로부터 멀어진 개별적인 데이터가 많다</li>
+<li>분산값이 작다 -&gt; 평균 주위에 개별적인 데이터가 많다</li>
+</ul>
+<h2 id="기술통계량-Descriptive-Analysis"><a href="#기술통계량-Descriptive-Analysis" class="headerlink" title="기술통계량(Descriptive Analysis)"></a>기술통계량(Descriptive Analysis)</h2><ul>
+<li>최대, 최소, 평균, 중간값, 분산, 표준편차</li>
+</ul>
+<h2 id="앨범-판매량-데이터"><a href="#앨범-판매량-데이터" class="headerlink" title="앨범 판매량 데이터"></a>앨범 판매량 데이터</h2><ul>
+<li>adverts : 광고집행비용</li>
+<li>sales : 판매량</li>
+</ul>
+<pre class=" language-r"><code class="language-r">albums <span class="token operator">=</span> read.csv<span class="token punctuation">(</span><span class="token string">"album.csv"</span><span class="token punctuation">)</span>
+
+str<span class="token punctuation">(</span>albums<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## &#39;data.frame&#39;:	200 obs. of  2 variables:
+##  $ adverts: num  10.3 985.7 1445.6 1188.2 574.5 ...
+##  $ sales  : int  330 120 360 270 220 170 70 210 200 300 ...
+</code></pre>
+<pre class=" language-r"><code class="language-r">albums<span class="token operator">$</span>sales
+</code></pre>
+<pre><code>##   [1] 330 120 360 270 220 170  70 210 200 300 290  70 150 190 240 100 250 210
+##  [19] 280 230 210 230 320 210 230 250  60 330 150 150 180  80 180 130 320 280
+##  [37] 200 130 190 150 230 310 340 240 180 220  40 190 290 340 250 190 120 230
+##  [55] 190 210 170 310  90 140 300 340 170 100 200  80 100  70  50 240 160 290
+##  [73] 140 210 300 230 280 160 200 110 110  70 100 190  70 360 360 300 120 150
+##  [91] 220 280 300 140 290 180 140 210 250 250 120 290  60 140 290 160 100 160
+## [109] 150 140 230 230  30  80 190  90 120 150 230 150 210 180 140 360  10 240
+## [127] 270 290 220 230 220 240 260 170 130 270 140  60 210 210 240 210 200 140
+## [145]  90 120 100 360 180 150 110  90 160 230  40  60 230 230 120 150 120  60
+## [163] 280 120 230 230  40 140 360 210 260 250 200 150 250 100 260 210 290 220
+## [181]  70 110 250 320 300 180 180 200 320 140 100 120 230 150 250 190 240 250
+## [199] 230 110
+</code></pre>
+<pre class=" language-r"><code class="language-r">sort<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>##   [1]  10  30  40  40  40  50  60  60  60  60  60  70  70  70  70  70  70  80
+##  [19]  80  80  90  90  90  90 100 100 100 100 100 100 100 100 110 110 110 110
+##  [37] 110 120 120 120 120 120 120 120 120 120 120 130 130 130 140 140 140 140
+##  [55] 140 140 140 140 140 140 140 150 150 150 150 150 150 150 150 150 150 150
+##  [73] 150 160 160 160 160 160 170 170 170 170 180 180 180 180 180 180 180 180
+##  [91] 190 190 190 190 190 190 190 190 200 200 200 200 200 200 200 210 210 210
+## [109] 210 210 210 210 210 210 210 210 210 210 220 220 220 220 220 220 230 230
+## [127] 230 230 230 230 230 230 230 230 230 230 230 230 230 230 230 240 240 240
+## [145] 240 240 240 240 250 250 250 250 250 250 250 250 250 250 260 260 260 270
+## [163] 270 270 280 280 280 280 280 290 290 290 290 290 290 290 290 300 300 300
+## [181] 300 300 300 310 310 320 320 320 320 330 330 340 340 340 360 360 360 360
+## [199] 360 360
+</code></pre>
+<ul>
+<li>최소값</li>
+</ul>
+<pre class=" language-r"><code class="language-r"><span class="token comment" spellcheck="true"># sort(albums$sales)[1]</span>
+min<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 10
+</code></pre>
+<ul>
+<li>최대값</li>
+</ul>
+<pre class=" language-r"><code class="language-r"><span class="token comment" spellcheck="true"># sort(albums$sales)[200]</span>
+max<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 360
+</code></pre>
+<ul>
+<li>최빈값</li>
+</ul>
+<pre class=" language-r"><code class="language-r">table<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## 
+##  10  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200 210 
+##   1   1   3   1   5   6   3   4   8   5  10   3  11  12   5   4   8   8   7  13 
+## 220 230 240 250 260 270 280 290 300 310 320 330 340 360 
+##   6  17   7  10   3   3   5   8   6   2   4   2   3   6
+</code></pre>
+<pre class=" language-r"><code class="language-r">sort<span class="token punctuation">(</span>table<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span><span class="token punctuation">,</span> decreasing <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+</code></pre>
+<pre><code>## 230 
+##  17
+</code></pre>
+<ul>
+<li>평균과 중간값</li>
+</ul>
+<pre class=" language-r"><code class="language-r">mean<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 193.2</span>
+</code></pre>
+<pre><code>## [1] 193.2
+</code></pre>
+<pre class=" language-r"><code class="language-r">median<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 200</span>
+</code></pre>
+<pre><code>## [1] 200
+</code></pre>
+<ul>
+<li>결측치 데이터 추가</li>
+</ul>
+<pre class=" language-r"><code class="language-r">sales2 <span class="token operator">=</span> c<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">,</span> <span class="token keyword">NA</span><span class="token punctuation">)</span>
+tail<span class="token punctuation">(</span>sales2<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 190 240 250 230 110  NA
+</code></pre>
+<pre class=" language-r"><code class="language-r">mean<span class="token punctuation">(</span>sales2<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] NA
+</code></pre>
+<pre class=" language-r"><code class="language-r">mean<span class="token punctuation">(</span>sales2<span class="token punctuation">,</span> na.rm <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># NA값 빼고 계산</span>
+</code></pre>
+<pre><code>## [1] 193.2
+</code></pre>
+<h2 id="평균의-가장-큰-단점"><a href="#평균의-가장-큰-단점" class="headerlink" title="평균의 가장 큰 단점"></a>평균의 가장 큰 단점</h2><ul>
+<li>극단적인 값에 굉장히 민감하게 반응</li>
+</ul>
+<pre class=" language-r"><code class="language-r">sales3 <span class="token operator">=</span> c<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">,</span> <span class="token number">30000000000</span><span class="token punctuation">)</span>
+mean<span class="token punctuation">(</span>sales3<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 149253924
+</code></pre>
+<h2 id="중앙값"><a href="#중앙값" class="headerlink" title="중앙값"></a>중앙값</h2><ul>
+<li>양 극단의 값에 민감하게 반응하지 않음</li>
+<li>이러한 특징을 강건하다(Robust)</li>
+</ul>
+<pre class=" language-r"><code class="language-r">median<span class="token punctuation">(</span>sales3<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 200
+</code></pre>
+<ul>
+<li>분산</li>
+</ul>
+<pre class=" language-r"><code class="language-r">weight <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">72</span><span class="token punctuation">,</span> <span class="token number">76</span><span class="token punctuation">)</span>
+weight_mean <span class="token operator">=</span> mean<span class="token punctuation">(</span>weight<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 평균</span>
+weight_deviation <span class="token operator">=</span> weight <span class="token operator">-</span> weight_mean   <span class="token comment" spellcheck="true"># 편차</span>
+weight_deviation
+</code></pre>
+<pre><code>## [1] -6 -2  0  2  6
+</code></pre>
+<pre class=" language-r"><code class="language-r">sum<span class="token punctuation">(</span>weight_deviation<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 0
+</code></pre>
+<pre class=" language-r"><code class="language-r">weight_deviation_2 <span class="token operator">=</span> weight_deviation <span class="token operator">^</span> <span class="token number">2</span>
+sum<span class="token punctuation">(</span>weight_deviation_2<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## [1] 80
+</code></pre>
+<pre class=" language-r"><code class="language-r">mean<span class="token punctuation">(</span>weight_deviation_2<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 분산</span>
+</code></pre>
+<pre><code>## [1] 16
+</code></pre>
+<ul>
+<li>표준편차</li>
+</ul>
+<pre class=" language-r"><code class="language-r">sqrt<span class="token punctuation">(</span>mean<span class="token punctuation">(</span>weight_deviation_2<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># sqrt는 제곱근</span>
+</code></pre>
+<pre><code>## [1] 4
+</code></pre>
+<ul>
+<li>R 내장 함수</li>
+</ul>
+<pre class=" language-r"><code class="language-r">var<span class="token punctuation">(</span>weight<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 표본분산</span>
+</code></pre>
+<pre><code>## [1] 20
+</code></pre>
+<pre class=" language-r"><code class="language-r">sd<span class="token punctuation">(</span>weight<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 표본표준편차</span>
+</code></pre>
+<pre><code>## [1] 4.472136
+</code></pre>
+<h2 id="변동계수-표준편차를-평균으로-나눈-값"><a href="#변동계수-표준편차를-평균으로-나눈-값" class="headerlink" title="변동계수 : 표준편차를 평균으로 나눈 값"></a>변동계수 : 표준편차를 평균으로 나눈 값</h2><ul>
+<li><p>CV : Coefficient of Variation &#x3D; 변동계수</p>
+</li>
+<li><p>RSD : Relative Standard Deviation &#x3D; 상대 표준 편차</p>
+</li>
+<li><p>cv &#x3D; sd(data) &#x2F; mean(data)</p>
+</li>
+</ul>
+<h2 id="주식-데이터"><a href="#주식-데이터" class="headerlink" title="주식 데이터"></a>주식 데이터</h2><pre class=" language-r"><code class="language-r"><span class="token comment" spellcheck="true"># install.packages("tidyquant")</span>
+library<span class="token punctuation">(</span>tidyquant<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## Warning: 패키지 &#39;tidyquant&#39;는 R 버전 4.1.3에서 작성되었습니다
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: lubridate
+</code></pre>
+<pre><code>## 
+## 다음의 패키지를 부착합니다: &#39;lubridate&#39;
+</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     date, intersect, setdiff, union
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: PerformanceAnalytics
+</code></pre>
+<pre><code>## Warning: 패키지 &#39;PerformanceAnalytics&#39;는 R 버전 4.1.3에서 작성되었습니다
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: xts
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: zoo
+</code></pre>
+<pre><code>## 
+## 다음의 패키지를 부착합니다: &#39;zoo&#39;
+</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     as.Date, as.Date.numeric
+</code></pre>
+<pre><code>## 
+## 다음의 패키지를 부착합니다: &#39;PerformanceAnalytics&#39;
+</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     legend
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: quantmod
+</code></pre>
+<pre><code>## Warning: 패키지 &#39;quantmod&#39;는 R 버전 4.1.3에서 작성되었습니다
+</code></pre>
+<pre><code>## 필요한 패키지를 로딩중입니다: TTR
+</code></pre>
+<pre><code>## Warning: 패키지 &#39;TTR&#39;는 R 버전 4.1.3에서 작성되었습니다
+</code></pre>
+<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
+##   method            from
+##   as.zoo.data.frame zoo
+</code></pre>
+<pre><code>## == Need to Learn tidyquant? ====================================================
+## Business Science offers a 1-hour course - Learning Lab #9: Performance Analysis &amp; Portfolio Optimization with tidyquant!
+## &lt;/&gt; Learn more at: https://university.business-science.io/p/learning-labs-pro &lt;/&gt;
+</code></pre>
+<pre class=" language-r"><code class="language-r">library<span class="token punctuation">(</span>quantmod<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>purrr<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>ggplot2<span class="token punctuation">)</span>
+library<span class="token punctuation">(</span>tibble<span class="token punctuation">)</span>
+
+tickers <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"AAPL"</span><span class="token punctuation">,</span> <span class="token string">"TSLA"</span><span class="token punctuation">)</span>
+getSymbols<span class="token punctuation">(</span>tickers<span class="token punctuation">,</span>
+           from <span class="token operator">=</span> <span class="token string">"2022-01-02"</span><span class="token punctuation">,</span>
+           to <span class="token operator">=</span> <span class="token string">"2022-01-30"</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>## &#39;getSymbols&#39; currently uses auto.assign=TRUE by default, but will
+## use auto.assign=FALSE in 0.5-0. You will still be able to use
+## &#39;loadSymbols&#39; to automatically load data. getOption(&quot;getSymbols.env&quot;)
+## and getOption(&quot;getSymbols.auto.assign&quot;) will still be checked for
+## alternate defaults.
+## 
+## This message is shown once per session and may be disabled by setting 
+## options(&quot;getSymbols.warning4.0&quot;=FALSE). See ?getSymbols for details.
+</code></pre>
+<pre><code>## [1] &quot;AAPL&quot; &quot;TSLA&quot;
+</code></pre>
+<pre class=" language-r"><code class="language-r">stock <span class="token operator">=</span> map<span class="token punctuation">(</span>tickers<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> Ad<span class="token punctuation">(</span>get<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+stock <span class="token operator">=</span> reduce<span class="token punctuation">(</span>stock<span class="token punctuation">,</span> merge<span class="token punctuation">)</span>
+colnames<span class="token punctuation">(</span>stock<span class="token punctuation">)</span> <span class="token operator">=</span> tickers
+
+head<span class="token punctuation">(</span>stock<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>##                AAPL    TSLA
+## 2022-01-03 181.7784 1199.78
+## 2022-01-04 179.4713 1149.59
+## 2022-01-05 174.6974 1088.12
+## 2022-01-06 171.7811 1064.70
+## 2022-01-07 171.9509 1026.96
+## 2022-01-10 171.9709 1058.12
+</code></pre>
+<pre class=" language-r"><code class="language-r">stock_df <span class="token operator">=</span> stock <span class="token percent-operator operator">%>%</span>
+  data.frame<span class="token punctuation">(</span>date <span class="token operator">=</span> index<span class="token punctuation">(</span>stock<span class="token punctuation">)</span><span class="token punctuation">)</span>
+stock_df
+</code></pre>
+<pre><code>##                AAPL    TSLA       date
+## 2022-01-03 181.7784 1199.78 2022-01-03
+## 2022-01-04 179.4713 1149.59 2022-01-04
+## 2022-01-05 174.6974 1088.12 2022-01-05
+## 2022-01-06 171.7811 1064.70 2022-01-06
+## 2022-01-07 171.9509 1026.96 2022-01-07
+## 2022-01-10 171.9709 1058.12 2022-01-10
+## 2022-01-11 174.8572 1064.40 2022-01-11
+## 2022-01-12 175.3066 1106.22 2022-01-12
+## 2022-01-13 171.9709 1031.56 2022-01-13
+## 2022-01-14 172.8498 1049.61 2022-01-14
+## 2022-01-18 169.5839 1030.51 2022-01-18
+## 2022-01-19 166.0185  995.65 2022-01-19
+## 2022-01-20 164.3007  996.27 2022-01-20
+## 2022-01-21 162.2034  943.90 2022-01-21
+## 2022-01-24 161.4143  930.00 2022-01-24
+## 2022-01-25 159.5767  918.40 2022-01-25
+## 2022-01-26 159.4868  937.41 2022-01-26
+## 2022-01-27 159.0174  829.10 2022-01-27
+## 2022-01-28 170.1133  846.35 2022-01-28
+</code></pre>
+<h2 id="사용자-정의-함수"><a href="#사용자-정의-함수" class="headerlink" title="사용자 정의 함수"></a>사용자 정의 함수</h2><pre class=" language-r"><code class="language-r">cv_fun <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+   result <span class="token operator">=</span> sd<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">/</span> mean<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span>
+   return<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+
+cv_fun<span class="token punctuation">(</span>stock_df<span class="token operator">$</span>AAPL<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 4.034862</span>
+</code></pre>
+<pre><code>## [1] 4.034862
+</code></pre>
+<pre class=" language-r"><code class="language-r">cv_fun<span class="token punctuation">(</span>stock_df<span class="token operator">$</span>TSLA<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 9.46726</span>
+</code></pre>
+<pre><code>## [1] 9.46726
+</code></pre>
+<ul>
+<li>그래프</li>
+</ul>
+<pre class=" language-r"><code class="language-r">ggplot<span class="token punctuation">(</span>stock_df<span class="token punctuation">,</span> aes<span class="token punctuation">(</span>x <span class="token operator">=</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_line<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>y <span class="token operator">=</span> AAPL<span class="token punctuation">,</span> colour <span class="token operator">=</span> <span class="token string">"Apple"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  geom_line<span class="token punctuation">(</span>aes<span class="token punctuation">(</span>y <span class="token operator">=</span> TSLA<span class="token punctuation">,</span> colour <span class="token operator">=</span> <span class="token string">"Tesla"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  scale_colour_manual<span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"Company"</span><span class="token punctuation">,</span> values <span class="token operator">=</span> 
+  c<span class="token punctuation">(</span><span class="token string">"Apple"</span> <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">,</span> <span class="token string">"Tesla"</span> <span class="token operator">=</span> <span class="token string">"darkblue"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+  theme_bw<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/basic_statistics_files/figure-html/unnamed-chunk-17-1.png"><!-- --></p>
+<h2 id="4분위수"><a href="#4분위수" class="headerlink" title="4분위수"></a>4분위수</h2><pre class=" language-r"><code class="language-r">qs_df <span class="token operator">=</span> quantile<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+qs_df<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">-</span> qs_df<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+</code></pre>
+<pre><code>##   75% 
+## 112.5
+</code></pre>
+<pre class=" language-r"><code class="language-r">IQR<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 3사분위에서 1사분위를 뺀 값</span>
+</code></pre>
+<pre><code>## [1] 112.5
+</code></pre>
+<ul>
+<li>boxplot</li>
+</ul>
+<pre class=" language-r"><code class="language-r">boxplot<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/basic_statistics_files/figure-html/unnamed-chunk-19-1.png"><!-- --></p>
+<h2 id="이상치-판별"><a href="#이상치-판별" class="headerlink" title="이상치 판별"></a>이상치 판별</h2><pre class=" language-r"><code class="language-r">sales4 <span class="token operator">=</span> c<span class="token punctuation">(</span>albums<span class="token operator">$</span>sales<span class="token punctuation">,</span> <span class="token number">450</span><span class="token punctuation">,</span> <span class="token number">460</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+q <span class="token operator">=</span> quantile<span class="token punctuation">(</span>sales4<span class="token punctuation">)</span>
+boxplot<span class="token punctuation">(</span>sales4<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/basic_statistics_files/figure-html/unnamed-chunk-20-1.png"><!-- --></p>
+<ul>
+<li>이상치 하한 극단 경계값 찾기</li>
+</ul>
+<pre class=" language-r"><code class="language-r">bottom_outlier <span class="token operator">=</span> q<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1.5</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">-</span> q<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+bottom_outlier
+</code></pre>
+<pre><code>## 25% 
+## -50
+</code></pre>
+<ul>
+<li>이상치 상한 극단 경계값 찾기</li>
+</ul>
+<pre class=" language-r"><code class="language-r">top_outlier <span class="token operator">=</span> q<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1.5</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">-</span> q<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+top_outlier
+</code></pre>
+<pre><code>## 75% 
+## 430
+</code></pre>
+<ul>
+<li>실제로 극단값이 존재하는지 출력</li>
+</ul>
+<pre class=" language-r"><code class="language-r">sales4<span class="token punctuation">[</span>sales4 <span class="token operator">&lt;</span> bottom_outlier<span class="token punctuation">]</span>
+</code></pre>
+<pre><code>## [1]  -100 -1000
+</code></pre>
+<pre class=" language-r"><code class="language-r">sales4<span class="token punctuation">[</span>sales4 <span class="token operator">></span> top_outlier<span class="token punctuation">]</span>
+</code></pre>
+<pre><code>## [1] 450 460
+</code></pre>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="출처 : 오라클 SQL과 PL&amp;#x2F;SQL을 다루는 기술
+%load_ext sql
+
+%sql oracle://ora_user:sirin@127.0.0.1:1521/myoracle
+
+6장 연습문제1번101번 사원에 대해 아래의 결과를 산출하는 쿼리를 작성해 보자.
+
+"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Self-Check 6장 7장"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="출처 : 오라클 SQL과 PL&amp;#x2F;SQL을 다루는 기술
+%load_ext sql
+
+%sql oracle://ora_user:sirin@127.0.0.1:1521/myoracle
+
+6장 연습문제1번101번 사원에 대해 아래의 결과를 산출하는 쿼리를 작성해 보자.
+
+"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Self-Check 6장 7장 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Self-Check 6장 7장</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-04-29
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/SQL/">#SQL</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>출처 : 오라클 SQL과 PL&#x2F;SQL을 다루는 기술</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>load_ext sql
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>sql oracle<span class="token punctuation">:</span><span class="token operator">//</span>ora_user<span class="token punctuation">:</span>sirin@<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">1521</span><span class="token operator">/</span>myoracle
+</code></pre>
+<h1 id="6장-연습문제"><a href="#6장-연습문제" class="headerlink" title="6장 연습문제"></a>6장 연습문제</h1><h2 id="1번"><a href="#1번" class="headerlink" title="1번"></a>1번</h2><p>101번 사원에 대해 아래의 결과를 산출하는 쿼리를 작성해 보자.</p>
+<hr>
+<h2 id="사번-사원명-job명칭-job시작일자-job종료일자-job수행부서명"><a href="#사번-사원명-job명칭-job시작일자-job종료일자-job수행부서명" class="headerlink" title="사번   사원명   job명칭 job시작일자  job종료일자   job수행부서명"></a>사번   사원명   job명칭 job시작일자  job종료일자   job수행부서명</h2><h3 id="문제해결과정"><a href="#문제해결과정" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>사번, 사원명은 employees 테이블에 있다<br>job 시작일자, job 종료일자는 job_history 테이블에 있다<br>job 명칭은 jobs 테이블에 있다<br>수행부서명은 departments 테이블에 있다</p>
+<p>employees 테이블과 departments 테이블은 department_id를 이용해 조인<br>departments 테이블과 job_history 테이블은 department_id를 이용해 조인<br>job_history 테이블과 jobs 테이블은 job_id를 이용해 조인</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+    <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>emp_name
+    <span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>start_date
+    <span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>end_date
+    <span class="token punctuation">,</span> <span class="token number">c</span><span class="token punctuation">.</span>job_title
+    <span class="token punctuation">,</span> <span class="token number">d</span><span class="token punctuation">.</span>department_name
+<span class="token keyword">FROM</span>
+    employees <span class="token number">a</span>
+    <span class="token punctuation">,</span> job_history <span class="token number">b</span>
+    <span class="token punctuation">,</span> jobs <span class="token number">c</span>
+    <span class="token punctuation">,</span> departments <span class="token number">d</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id <span class="token operator">=</span> <span class="token number">d</span><span class="token punctuation">.</span>department_id
+  <span class="token operator">AND</span> <span class="token number">d</span><span class="token punctuation">.</span>department_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id
+  <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>job_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>job_id
+  <span class="token operator">AND</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id <span class="token operator">=</span> <span class="token number">101</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>employee_id</th>
+        <th>emp_name</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>job_title</th>
+        <th>department_name</th>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Neena Kochhar</td>
+        <td>1995-09-17 00:00:00</td>
+        <td>2001-06-17 00:00:00</td>
+        <td>Administration Assistant</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>101</td>
+        <td>Neena Kochhar</td>
+        <td>2002-07-01 00:00:00</td>
+        <td>2006-12-31 00:00:00</td>
+        <td>Public Accountant</td>
+        <td>기획부</td>
+    </tr>
+</table>
+
+
+
+<h2 id="2번"><a href="#2번" class="headerlink" title="2번"></a>2번</h2><p>아래의 쿼리를 수행하면 오류가 발생한다. 오류의 원인은 무엇인지 설명해 보자.</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+    <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>emp_name
+    <span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>job_id
+    <span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id
+<span class="token keyword">FROM</span>
+    employees <span class="token number">a</span>
+    <span class="token punctuation">,</span> job_history <span class="token number">b</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span>
+  <span class="token operator">AND</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id<span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id
+</code></pre>
+<h3 id="답"><a href="#답" class="headerlink" title="답"></a>답</h3><p>AND a.department_id(+) &#x3D; b.department_id;에서 외부조인이 앞에 붙어서</p>
+<h2 id="3번"><a href="#3번" class="headerlink" title="3번"></a>3번</h2><p>외부 조인을 할 때 (+)연산자를 같이사용할 수 없는데, IN 절에 사용하는 값이 한 개이면 사용할 수 있다 그 이유는 무엇인지 설명해 보자.</p>
+<h3 id="답-1"><a href="#답-1" class="headerlink" title="답"></a>답</h3><p>오라클은 IN 절에 포함된 값을 기준으로 OR로 변환한다.<br>예를 들어,<br>   department_id IN (10, 20, 30) 은<br>   department_id &#x3D; 10<br>   OR department_id &#x3D; 20<br>   OR department_id &#x3D; 30) 로 바꿔 쓸 수 있다.</p>
+<p>그런데 IN절에 값이 1개인 경우, 즉 department_id IN (10)일 경우 department_id &#x3D; 10 로 변환할 수 있으므로,<br>외부조인을 하더라도 값이 1개인 경우는 사용할 수 있다.</p>
+<h2 id="4번"><a href="#4번" class="headerlink" title="4번"></a>4번</h2><p>다음의 쿼리를 ANSI 문법으로 변경해보자.</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id<span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>department_name
+<span class="token keyword">FROM</span> departments <span class="token number">a</span><span class="token punctuation">,</span> employees <span class="token number">b</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id
+  <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>salary <span class="token operator">></span> <span class="token number">3000</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">a</span><span class="token punctuation">.</span>department_name
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>department_name</th>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>경리부</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>경리부</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>구매/생산부</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>마케팅</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>마케팅</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>인사부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>자금부</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>총무기획부</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>홍보부</td>
+    </tr>
+</table>
+
+
+
+<h3 id="문제해결과정-1"><a href="#문제해결과정-1" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>2번째 테이블을 INNER JOIN 뒤에 쓰고 WHERE절의 첫 번째 조건을 ON 뒤로 옮겨준다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>department_id
+    <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>department_name
+<span class="token keyword">FROM</span>
+    departments <span class="token number">a</span>
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> employees <span class="token number">b</span>
+        <span class="token keyword">ON</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>department_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id<span class="token punctuation">)</span>
+<span class="token keyword">WHERE</span> <span class="token number">b</span><span class="token punctuation">.</span>salary <span class="token operator">></span> <span class="token number">3000</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">a</span><span class="token punctuation">.</span>department_name
+</code></pre>
+<h2 id="5번"><a href="#5번" class="headerlink" title="5번"></a>5번</h2><p>다음은 연관성 있는 서브 쿼리다. 이를 연관성 없는 서브 쿼리로 변환해 보자.</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id<span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>department_name
+ <span class="token keyword">FROM</span> departments <span class="token number">a</span>
+<span class="token keyword">WHERE</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">(</span> <span class="token keyword">SELECT</span> <span class="token number">1</span> 
+                 <span class="token keyword">FROM</span> job_history <span class="token number">b</span>
+                <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>department_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>department_id <span class="token punctuation">)</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>department_name</th>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>마케팅</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>배송부</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>IT</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>영업부</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>기획부</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>경리부</td>
+    </tr>
+</table>
+
+
+
+<h3 id="문제해결과정-2"><a href="#문제해결과정-2" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>메인 쿼리에 쓰이는 테이블의 값이 서브 쿼리에 들어가지 않도록 바꿔준다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    department_id
+    <span class="token punctuation">,</span> department_name
+<span class="token keyword">FROM</span> departments
+<span class="token keyword">WHERE</span> department_id <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> department_id
+                        <span class="token keyword">FROM</span> job_history<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="6번"><a href="#6번" class="headerlink" title="6번"></a>6번</h2><p>도별 이탈리아 최대매출액과 사원을 작성하는 쿼리를 학습했다. 이 쿼리를 기준으로 최대매출액 뿐만 아니라 최소매출액과 해당 사원을 조회하는 쿼리를 작성해 보자.</p>
+<h3 id="문제해결과정-3"><a href="#문제해결과정-3" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>필요한 것<br>이탈리아 연도 매출액 사원</p>
+<p>이탈리아는 countries 테이블에 있다<br>연도와 매출액은 sales 테이블의 sales_month를 이용해 만들어야 할 것 같다<br>사원은 employees 테이블에 있다</p>
+<p>countries 테이블에서 sales 테이블로 바로 조인을 할 수 없기 때문에 중간에 있는 customers 테이블을 거쳐간다<br>countries 테이블과 customers 테이블은 country_id를 이용해 조인한다<br>customers 테이블과 sales 테이블은 cust_id를 이용해 조인한다<br>sales 테이블과 employees 테이블은 employee_id를 이용해 조인한다</p>
+<h4 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h4><p>연도, 사원별 이탈리아 매출액 구하기<br>연도는 sales 테이블의 sales_month를 이용하고 사원은 customers 테이블의 employee_id,<br>연간 매출액은 sales 테이블의 amount_sold을 이용하고 이탈리아는 countries 테이블의 country_name을 이용해 구한다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> years
+    <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+<span class="token keyword">FROM</span>
+    sales <span class="token number">a</span>
+    <span class="token punctuation">,</span> customers <span class="token number">b</span>
+    <span class="token punctuation">,</span> countries <span class="token number">c</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+  <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+  <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>years</th>
+        <th>employee_id</th>
+        <th>amount_sold</th>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>1</td>
+        <td>5404.82</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>170</td>
+        <td>10822.62</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>150</td>
+        <td>132543.37</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>175</td>
+        <td>126982.7</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>160</td>
+        <td>72663.95</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>171</td>
+        <td>62765.84</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>176</td>
+        <td>69330.91</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>153</td>
+        <td>142987.82</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>167</td>
+        <td>171591.21</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>153</td>
+        <td>2443.72</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>156</td>
+        <td>121910.05</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>168</td>
+        <td>100289.54</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>172</td>
+        <td>96872.2</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>169</td>
+        <td>102573.99</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>145</td>
+        <td>4646.74</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>163</td>
+        <td>92604.53</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>179</td>
+        <td>123200.62</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>149</td>
+        <td>138663.65</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>154</td>
+        <td>83216.54</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>176</td>
+        <td>9718.24</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>157</td>
+        <td>203236.79</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>162</td>
+        <td>94310.98</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>175</td>
+        <td>24371.95</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>177</td>
+        <td>90685.56</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>173</td>
+        <td>426018.7</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>174</td>
+        <td>258841.2</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>158</td>
+        <td>224240.07</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>159</td>
+        <td>163403.76</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>170</td>
+        <td>79950.04</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>150</td>
+        <td>76638.75</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>148</td>
+        <td>64039.34</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>155</td>
+        <td>32005</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>161</td>
+        <td>53927.44</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>166</td>
+        <td>141683.55</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>145</td>
+        <td>311761.02</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>147</td>
+        <td>193319.44</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>146</td>
+        <td>89197.23</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>151</td>
+        <td>39957.53</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>162</td>
+        <td>16259.5</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>154</td>
+        <td>116769.25</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>171</td>
+        <td>14145.59</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>148</td>
+        <td>1557.54</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>152</td>
+        <td>97859.24</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>160</td>
+        <td>77893.94</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>165</td>
+        <td>145408.5</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>164</td>
+        <td>145790.31</td>
+    </tr>
+</table>
+
+
+
+<h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><p>(1)을 이용해서 연도별 최대 매출액, 최소 매출액을 구한다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    years
+    <span class="token punctuation">,</span> <span class="token function">MAX</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> max_sold
+    <span class="token punctuation">,</span> <span class="token function">MIN</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> min_sold
+<span class="token keyword">FROM</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+        SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> years
+        <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+        <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+    <span class="token keyword">FROM</span>
+        sales <span class="token number">a</span>
+        <span class="token punctuation">,</span> customers <span class="token number">b</span>
+        <span class="token punctuation">,</span> countries <span class="token number">c</span>
+    <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+    <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+    <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">)</span> K
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> years
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> years
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>years</th>
+        <th>max_sold</th>
+        <th>min_sold</th>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>311761.02</td>
+        <td>5404.82</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>193319.44</td>
+        <td>4646.74</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>142987.82</td>
+        <td>16259.5</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>426018.7</td>
+        <td>1557.54</td>
+    </tr>
+</table>
+
+
+
+<h4 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h4><p>(1)의 결과와 (2)의 결과를 조인해서 최대매출, 최소매출액을 일으킨 사원을 찾아야 하므로, (1)과 (2) 결과를 인라인 뷰로 만든다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    emp<span class="token punctuation">.</span>years
+    <span class="token punctuation">,</span> emp<span class="token punctuation">.</span>amount_sold
+<span class="token keyword">FROM</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+        SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> years
+        <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+        <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+     <span class="token keyword">FROM</span>
+         sales <span class="token number">a</span>
+         <span class="token punctuation">,</span> customers <span class="token number">b</span>
+         <span class="token punctuation">,</span> countries <span class="token number">c</span>
+     <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+     <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+     <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+     <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">)</span> emp
+     <span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+           years
+           <span class="token punctuation">,</span> <span class="token function">MAX</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> max_sold
+           <span class="token punctuation">,</span> <span class="token function">MIN</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> min_sold
+        <span class="token keyword">FROM</span>
+            <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> years
+                <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+                <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+            <span class="token keyword">FROM</span>
+                sales <span class="token number">a</span>
+                <span class="token punctuation">,</span> customers <span class="token number">b</span>
+                <span class="token punctuation">,</span> countries <span class="token number">c</span>
+            <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+            <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+            <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+            <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">)</span> K
+        <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> years<span class="token punctuation">)</span> sale
+<span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>years <span class="token operator">=</span> sale<span class="token punctuation">.</span>years
+  <span class="token operator">AND</span> <span class="token punctuation">(</span>emp<span class="token punctuation">.</span>amount_sold <span class="token operator">=</span> sale<span class="token punctuation">.</span>max_sold <span class="token operator">OR</span> emp<span class="token punctuation">.</span>amount_sold <span class="token operator">=</span> sale<span class="token punctuation">.</span>min_sold<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> years
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>years</th>
+        <th>amount_sold</th>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>311761.02</td>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>5404.82</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>4646.74</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>193319.44</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>142987.82</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>16259.5</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>426018.7</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>1557.54</td>
+    </tr>
+</table>
+
+
+
+<h4 id="4"><a href="#4" class="headerlink" title="(4)"></a>(4)</h4><p>마지막으로 (3)의 결과와 사원 테이블을 조인해서 사원 이름을 가져온다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    emp<span class="token punctuation">.</span>years
+    <span class="token punctuation">,</span> emp2<span class="token punctuation">.</span>emp_name
+    <span class="token punctuation">,</span> emp<span class="token punctuation">.</span>amount_sold
+<span class="token keyword">FROM</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+        SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">as</span> years
+        <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+        <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+     <span class="token keyword">FROM</span>
+        sales <span class="token number">a</span>
+        <span class="token punctuation">,</span> customers <span class="token number">b</span>
+        <span class="token punctuation">,</span> countries <span class="token number">c</span>
+     <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+       <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+       <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">)</span> emp
+    <span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+          years
+         <span class="token punctuation">,</span> <span class="token function">MAX</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> max_sold
+         <span class="token punctuation">,</span> <span class="token function">MIN</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> min_sold
+       <span class="token keyword">FROM</span>
+          <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+              SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">as</span> years
+              <span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id
+              <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amount_sold
+           <span class="token keyword">FROM</span>
+              sales <span class="token number">a</span>
+              <span class="token punctuation">,</span> customers <span class="token number">b</span>
+              <span class="token punctuation">,</span> countries <span class="token number">c</span>
+           <span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+             <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+             <span class="token operator">AND</span> <span class="token number">c</span><span class="token punctuation">.</span>country_name <span class="token operator">=</span> <span class="token string">'Italy'</span>
+           <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> SUBSTR<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>sales_month<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">a</span><span class="token punctuation">.</span>employee_id<span class="token punctuation">)</span> K
+        <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> years<span class="token punctuation">)</span> sale
+    <span class="token punctuation">,</span> employees emp2
+<span class="token keyword">WHERE</span> emp<span class="token punctuation">.</span>years <span class="token operator">=</span> sale<span class="token punctuation">.</span>years
+  <span class="token operator">AND</span> <span class="token punctuation">(</span>emp<span class="token punctuation">.</span>amount_sold <span class="token operator">=</span> sale<span class="token punctuation">.</span>max_sold <span class="token operator">OR</span> emp<span class="token punctuation">.</span>amount_sold <span class="token operator">=</span> sale<span class="token punctuation">.</span>min_sold<span class="token punctuation">)</span>
+  <span class="token operator">AND</span> emp<span class="token punctuation">.</span>employee_id <span class="token operator">=</span> emp2<span class="token punctuation">.</span>employee_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> years
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>years</th>
+        <th>emp_name</th>
+        <th>amount_sold</th>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>John Russell</td>
+        <td>311761.02</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>John Russell</td>
+        <td>4646.74</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>Alberto Errazuriz</td>
+        <td>193319.44</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>Christopher Olsen</td>
+        <td>142987.82</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>Clara Vishney</td>
+        <td>16259.5</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>Sundita Kumar</td>
+        <td>426018.7</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>Gerald Cambrault</td>
+        <td>1557.54</td>
+    </tr>
+</table>
+
+
+
+<h1 id="7장-연습문제"><a href="#7장-연습문제" class="headerlink" title="7장 연습문제"></a>7장 연습문제</h1><h2 id="1번-1"><a href="#1번-1" class="headerlink" title="1번"></a>1번</h2><p>계층형 쿼리 응용편에서 LISTAGG 함수를 사용해 다음과 같이 로우를 컬럼으로 분리했다</p>
+<pre><code>SELECT department_id,
+         LISTAGG(emp_name, &#39;,&#39;) WITHIN GROUP (ORDER BY emp_name) as empnames
+    FROM employees
+   WHERE department_id IS NOT NULL
+   GROUP BY department_id;
+</code></pre>
+<p>LISTAGG 함수 대신 계층형 쿼리, 분석함수를 사용해서 위 쿼리와 동일한 결과를 산출하는 쿼리를 작성해 보자</p>
+<h3 id="문제해결과정-4"><a href="#문제해결과정-4" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    department_id
+    <span class="token punctuation">,</span> SUBSTR<span class="token punctuation">(</span>SYS_CONNECT_BY_PATH<span class="token punctuation">(</span>emp_name<span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> empnames
+<span class="token keyword">FROM</span>
+    <span class="token punctuation">(</span><span class="token keyword">SELECT</span> emp_name
+            <span class="token punctuation">,</span> department_id
+            <span class="token punctuation">,</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> department_id<span class="token punctuation">)</span> cnt
+            <span class="token punctuation">,</span> ROW_NUMBER <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> department_id <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> emp_name<span class="token punctuation">)</span> rowseq
+     <span class="token keyword">FROM</span> employees
+     <span class="token keyword">WHERE</span> department_id <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">)</span>
+<span class="token keyword">WHERE</span> rowseq <span class="token operator">=</span> cnt
+<span class="token keyword">START</span> <span class="token keyword">WITH</span> rowseq <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">CONNECT</span> <span class="token keyword">BY</span> PRIOR rowseq <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">=</span> rowseq
+<span class="token operator">AND</span> PRIOR department_id <span class="token operator">=</span> department_id
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>empnames</th>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Jennifer Whalen</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>Michael Hartstein,Pat Fay</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Alexander Khoo,Den Raphaely,Guy Himuro,Karen Colmenares,Shelli Baida,Sigal Tobias</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>Susan Mavris</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>Adam Fripp,Alana Walsh,Alexis Bull,Anthony Cabrio,Britney Everett,Curtis Davies,Donald OConnell,Douglas Grant,Girard Geoni,Hazel Philtanker,Irene Mikkilineni,James Landry,James Marlow,Jason Mallin,Jean Fleaur,Jennifer Dilly,John Seo,Joshua Patel,Julia Dellinger,Julia Nayer,Kelly Chung,Kevin Feeney,Kevin Mourgos,Ki Gee,Laura Bissot,Martha Sullivan,Matthew Weiss,Michael Rogers,Mozhe Atkinson,Nandita Sarchand,Payam Kaufling,Peter Vargas,Randall Matos,Randall Perkins,Renske Ladwig,Samuel McCain,Sarah Bell,Shanta Vollman,Stephen Stiles,Steven Markle,TJ Olson,Timothy Gates,Trenna Rajs,Vance Jones,Winston Taylor</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>Alexander Hunold,Bruce Ernst,David Austin,Diana Lorentz,Valli Pataballa</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>Hermann Baer</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>Alberto Errazuriz,Allan McEwen,Alyssa Hutton,Amit Banda,Charles Johnson,Christopher Olsen,Clara Vishney,Danielle Greene,David Bernstein,David Lee,Eleni Zlotkey,Elizabeth Bates,Ellen Abel,Gerald Cambrault,Harrison Bloom,Jack Livingston,Janette King,John Russell,Jonathon Taylor,Karen Partners,Lindsey Smith,Lisa Ozer,Louise Doran,Mattea Marvins,Nanette Cambrault,Oliver Tuvault,Patrick Sully,Peter Hall,Peter Tucker,Sarath Sewall,Sundar Ande,Sundita Kumar,Tayler Fox,William Smith</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>Lex De Haan,Neena Kochhar,Steven King</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>Daniel Faviet,Ismael Sciarra,John Chen,Jose Manuel Urman,Luis Popp,Nancy Greenberg</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>Shelley Higgins,William Gietz</td>
+    </tr>
+</table>
+
+
+
+<h2 id="2번-1"><a href="#2번-1" class="headerlink" title="2번"></a>2번</h2><p>아래의 쿼리는 사원테이블에서 JOB_ID가 ‘SH_CLERK’인 사원을 조회하는 쿼리이다</p>
+<pre><code>SELECT employee_id, emp_name, hire_date
+FROM employees
+WHERE job_id = &#39;SH_CLERK&#39;
+ORDER By hire_date; 
+</code></pre>
+<p>사원테이블에서 퇴사일자(retire_date)는 모두 비어있는데, 위 결과에서 사원번호가 184인 사원의 퇴사일자는 다음으로 입사일자가 빠른 192번 사원의 입사일자라고 가정해서 다음과 같은 형태로 결과를 추출해낼 수 있도록 쿼리를 작성해 보자. (입사일자가 가장 최근인 183번 사원의 퇴사일자는 NULL이다)</p>
+<p>EMPLOYEE_ID EMP_NAME             HIRE_DATE             RETIRE_DATE</p>
+<hr>
+<pre><code>    184 Nandita Sarchand     2004/01/27 00:00:00  2004/02/04 00:00:00
+    192 Sarah Bell           2004/02/04 00:00:00  2005/02/20 00:00:00
+    185 Alexis Bull          2005/02/20 00:00:00  2005/03/03 00:00:00
+    193 Britney Everett      2005/03/03 00:00:00  2005/06/14 00:00:00
+    188 Kelly Chung          2005/06/14 00:00:00  2005/08/13 00:00:00
+</code></pre>
+<p>….<br>….<br>        199 Douglas Grant        2008&#x2F;01&#x2F;13 00:00:00  2008&#x2F;02&#x2F;03 00:00:00<br>        183 Girard Geoni         2008&#x2F;02&#x2F;03 00:00:00</p>
+<h3 id="문제해결과정-5"><a href="#문제해결과정-5" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>2번째 hire_date를 1번째 retire_date로 3번째 hire_date는 2번째 retire_date로 이런식으로 반복하면 된다<br>후행 로우의 값을 참조할 때는 LEAD를 쓴다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    EMPLOYEE_ID
+    <span class="token punctuation">,</span> EMP_NAME
+    <span class="token punctuation">,</span> HIRE_DATE
+    <span class="token punctuation">,</span> LEAD<span class="token punctuation">(</span>hire_date<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> job_id <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> hire_date<span class="token punctuation">)</span> <span class="token keyword">AS</span> retire_date
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">WHERE</span> job_id <span class="token operator">=</span> <span class="token string">'SH_CLERK'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">By</span> hire_date
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>employee_id</th>
+        <th>emp_name</th>
+        <th>hire_date</th>
+        <th>retire_date</th>
+    </tr>
+    <tr>
+        <td>184</td>
+        <td>Nandita Sarchand</td>
+        <td>2004-01-27 00:00:00</td>
+        <td>2004-02-04 00:00:00</td>
+    </tr>
+    <tr>
+        <td>192</td>
+        <td>Sarah Bell</td>
+        <td>2004-02-04 00:00:00</td>
+        <td>2005-02-20 00:00:00</td>
+    </tr>
+    <tr>
+        <td>185</td>
+        <td>Alexis Bull</td>
+        <td>2005-02-20 00:00:00</td>
+        <td>2005-03-03 00:00:00</td>
+    </tr>
+    <tr>
+        <td>193</td>
+        <td>Britney Everett</td>
+        <td>2005-03-03 00:00:00</td>
+        <td>2005-06-14 00:00:00</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>Kelly Chung</td>
+        <td>2005-06-14 00:00:00</td>
+        <td>2005-08-13 00:00:00</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>Jennifer Dilly</td>
+        <td>2005-08-13 00:00:00</td>
+        <td>2006-01-24 00:00:00</td>
+    </tr>
+    <tr>
+        <td>180</td>
+        <td>Winston Taylor</td>
+        <td>2006-01-24 00:00:00</td>
+        <td>2006-02-23 00:00:00</td>
+    </tr>
+    <tr>
+        <td>181</td>
+        <td>Jean Fleaur</td>
+        <td>2006-02-23 00:00:00</td>
+        <td>2006-04-24 00:00:00</td>
+    </tr>
+    <tr>
+        <td>196</td>
+        <td>Alana Walsh</td>
+        <td>2006-04-24 00:00:00</td>
+        <td>2006-05-23 00:00:00</td>
+    </tr>
+    <tr>
+        <td>197</td>
+        <td>Kevin Feeney</td>
+        <td>2006-05-23 00:00:00</td>
+        <td>2006-06-24 00:00:00</td>
+    </tr>
+    <tr>
+        <td>186</td>
+        <td>Julia Dellinger</td>
+        <td>2006-06-24 00:00:00</td>
+        <td>2006-07-01 00:00:00</td>
+    </tr>
+    <tr>
+        <td>194</td>
+        <td>Samuel McCain</td>
+        <td>2006-07-01 00:00:00</td>
+        <td>2006-07-11 00:00:00</td>
+    </tr>
+    <tr>
+        <td>190</td>
+        <td>Timothy Gates</td>
+        <td>2006-07-11 00:00:00</td>
+        <td>2007-02-07 00:00:00</td>
+    </tr>
+    <tr>
+        <td>187</td>
+        <td>Anthony Cabrio</td>
+        <td>2007-02-07 00:00:00</td>
+        <td>2007-03-17 00:00:00</td>
+    </tr>
+    <tr>
+        <td>195</td>
+        <td>Vance Jones</td>
+        <td>2007-03-17 00:00:00</td>
+        <td>2007-06-21 00:00:00</td>
+    </tr>
+    <tr>
+        <td>182</td>
+        <td>Martha Sullivan</td>
+        <td>2007-06-21 00:00:00</td>
+        <td>2007-06-21 00:00:00</td>
+    </tr>
+    <tr>
+        <td>198</td>
+        <td>Donald OConnell</td>
+        <td>2007-06-21 00:00:00</td>
+        <td>2007-12-19 00:00:00</td>
+    </tr>
+    <tr>
+        <td>191</td>
+        <td>Randall Perkins</td>
+        <td>2007-12-19 00:00:00</td>
+        <td>2008-01-13 00:00:00</td>
+    </tr>
+    <tr>
+        <td>199</td>
+        <td>Douglas Grant</td>
+        <td>2008-01-13 00:00:00</td>
+        <td>2008-02-03 00:00:00</td>
+    </tr>
+    <tr>
+        <td>183</td>
+        <td>Girard Geoni</td>
+        <td>2008-02-03 00:00:00</td>
+        <td>None</td>
+    </tr>
+</table>
+
+
+
+<h2 id="3번-1"><a href="#3번-1" class="headerlink" title="3번"></a>3번</h2><p>sales 테이블에는 판매데이터, customers 테이블에는 고객정보가 있다. 2001년 12월(SALES_MONTH &#x3D; ‘200112’) 판매데이터 중 현재일자를 기준으로 고객의 나이(customers.cust_year_of_birth)를 계산해서 다음과 같이 연령대별 매출금액을 보여주는 쿼리를 작성해 보자.</p>
+<hr>
+<h2 id="연령대-매출금액"><a href="#연령대-매출금액" class="headerlink" title="연령대    매출금액"></a>연령대    매출금액</h2><p>10대      xxxxxx<br>20대      ….<br>30대      ….<br>40대      ….</p>
+<hr>
+<h3 id="문제해결과정-6"><a href="#문제해결과정-6" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>연령대를 구하려면 sysdate의 연도를 가져와서 cust_year_of_birth를 빼주면 된다<br>매출 금액은 sales 테이블의 amount_sold를 쓰면 된다<br>customers 테이블과 sales 테이블은 cust_id를 이용해 조인 해준다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">WITH</span> basis <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                    WIDTH_bUCKET<span class="token punctuation">(</span>to_char<span class="token punctuation">(</span>sysdate<span class="token punctuation">,</span> <span class="token string">'yyyy'</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_year_of_birth<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> old_seg
+                    <span class="token punctuation">,</span> TO_CHAR<span class="token punctuation">(</span>SYSDATE<span class="token punctuation">,</span> <span class="token string">'yyyy'</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_year_of_birth <span class="token keyword">AS</span> olds
+                    <span class="token punctuation">,</span> s<span class="token punctuation">.</span>amount_sold
+               <span class="token keyword">FROM</span>
+                    sales s
+                    <span class="token punctuation">,</span> customers <span class="token number">b</span>
+               <span class="token keyword">WHERE</span> s<span class="token punctuation">.</span>sales_month <span class="token operator">=</span> <span class="token string">'200112'</span>
+                 <span class="token operator">AND</span> s<span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> real_data <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                        old_seg <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">||</span> <span class="token string">'대'</span> <span class="token keyword">AS</span> old_segment
+                        <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> sold_seg_amt
+                    <span class="token keyword">FROM</span> basis
+                    <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> old_seg<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> real_data
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> old_segment
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>old_segment</th>
+        <th>sold_seg_amt</th>
+    </tr>
+    <tr>
+        <td>30대</td>
+        <td>97073.96</td>
+    </tr>
+    <tr>
+        <td>40대</td>
+        <td>316936.49</td>
+    </tr>
+    <tr>
+        <td>50대</td>
+        <td>348209.7</td>
+    </tr>
+    <tr>
+        <td>60대</td>
+        <td>603012.69</td>
+    </tr>
+    <tr>
+        <td>70대</td>
+        <td>621160.02</td>
+    </tr>
+    <tr>
+        <td>80대</td>
+        <td>404331.35</td>
+    </tr>
+    <tr>
+        <td>90대</td>
+        <td>156317.9</td>
+    </tr>
+</table>
+
+
+
+<h2 id="4번-1"><a href="#4번-1" class="headerlink" title="4번"></a>4번</h2><p>3번 문제를 이용해 월별로 판매금액이 가장 하위에 속하는 대륙 목록을 뽑아보자 (대륙목록은 countries 테이블의 country_region에 있으며, country_id 컬럼으로 customers 테이블과 조인을 해서 구한다)</p>
+<hr>
+<h2 id="매출월-지역-대륙-매출금액"><a href="#매출월-지역-대륙-매출금액" class="headerlink" title="매출월    지역(대륙)  매출금액 "></a>매출월    지역(대륙)  매출금액 </h2><p>199801    Oceania      xxxxxx<br>199803    Oceania      xxxxxx<br>…</p>
+<hr>
+<h3 id="문제해결과정-7"><a href="#문제해결과정-7" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>각 월은 sales 테이블의 sales_month에 있고 판매금액은 sales 테이블의 amount_sold에 있다<br>sales 테이블과 customers 테이블은 cust_id를 이용해 조인해준다<br>순위는 rank()를 이용해 구한다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">WITH</span> basis <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                    <span class="token number">c</span><span class="token punctuation">.</span>country_region
+                    <span class="token punctuation">,</span> s<span class="token punctuation">.</span>sales_month
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>amount_sold<span class="token punctuation">)</span> <span class="token keyword">AS</span> amt
+               <span class="token keyword">FROM</span>
+                    sales s
+                    <span class="token punctuation">,</span> customers <span class="token number">b</span>
+                    <span class="token punctuation">,</span> countries <span class="token number">c</span>
+               <span class="token keyword">WHERE</span> s<span class="token punctuation">.</span>cust_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>cust_id
+                 <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>country_id <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>country_id
+               <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token number">c</span><span class="token punctuation">.</span>country_region<span class="token punctuation">,</span> s<span class="token punctuation">.</span>sales_month<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> real_data <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                        sales_month
+                        <span class="token punctuation">,</span> country_region
+                        <span class="token punctuation">,</span> amt
+                        <span class="token punctuation">,</span> RANK<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> sales_month <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> amt<span class="token punctuation">)</span> ranks
+                    <span class="token keyword">FROM</span> basis<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> real_data
+<span class="token keyword">WHERE</span> ranks <span class="token operator">=</span> <span class="token number">1</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>sales_month</th>
+        <th>country_region</th>
+        <th>amt</th>
+        <th>ranks</th>
+    </tr>
+    <tr>
+        <td>199801</td>
+        <td>Oceania</td>
+        <td>96005.64</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199803</td>
+        <td>Oceania</td>
+        <td>80391.31</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199804</td>
+        <td>Oceania</td>
+        <td>72746.98</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199805</td>
+        <td>Oceania</td>
+        <td>99230.96</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199806</td>
+        <td>Oceania</td>
+        <td>67077.62</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199807</td>
+        <td>Oceania</td>
+        <td>85096.46</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199808</td>
+        <td>Oceania</td>
+        <td>78091.58</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199809</td>
+        <td>Oceania</td>
+        <td>118901.26</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199810</td>
+        <td>Oceania</td>
+        <td>85674.25</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199811</td>
+        <td>Oceania</td>
+        <td>79296.06</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199812</td>
+        <td>Oceania</td>
+        <td>77523.49</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199901</td>
+        <td>Oceania</td>
+        <td>80821.91</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199902</td>
+        <td>Oceania</td>
+        <td>72027.75</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199903</td>
+        <td>Oceania</td>
+        <td>68351.69</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199904</td>
+        <td>Oceania</td>
+        <td>55428</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199905</td>
+        <td>Oceania</td>
+        <td>61505.12</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199906</td>
+        <td>Oceania</td>
+        <td>62447.22</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199907</td>
+        <td>Oceania</td>
+        <td>79778.39</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199908</td>
+        <td>Oceania</td>
+        <td>74464.55</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199909</td>
+        <td>Oceania</td>
+        <td>78706.32</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199910</td>
+        <td>Oceania</td>
+        <td>70338.84</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199911</td>
+        <td>Oceania</td>
+        <td>73675.66</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>199912</td>
+        <td>Oceania</td>
+        <td>79383.9</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200001</td>
+        <td>Middle East</td>
+        <td>61.98</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200002</td>
+        <td>Middle East</td>
+        <td>212.96</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200003</td>
+        <td>Oceania</td>
+        <td>67237.91</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200004</td>
+        <td>Oceania</td>
+        <td>57534.46</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200005</td>
+        <td>Oceania</td>
+        <td>78823.15</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200006</td>
+        <td>Oceania</td>
+        <td>62379.39</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200007</td>
+        <td>Oceania</td>
+        <td>91608.17</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200008</td>
+        <td>Oceania</td>
+        <td>82134.07</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200009</td>
+        <td>Oceania</td>
+        <td>76403.85</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200010</td>
+        <td>Oceania</td>
+        <td>96232.62</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200011</td>
+        <td>Oceania</td>
+        <td>75968.46</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200012</td>
+        <td>Oceania</td>
+        <td>84306.21</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200101</td>
+        <td>Middle East</td>
+        <td>628.89</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200102</td>
+        <td>Oceania</td>
+        <td>108562.93</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200103</td>
+        <td>Oceania</td>
+        <td>124198.57</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200104</td>
+        <td>Oceania</td>
+        <td>82461.22</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200105</td>
+        <td>Oceania</td>
+        <td>107033.54</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200106</td>
+        <td>Oceania</td>
+        <td>81323.28</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200107</td>
+        <td>Oceania</td>
+        <td>89864.35</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200108</td>
+        <td>Oceania</td>
+        <td>97856.05</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200109</td>
+        <td>Oceania</td>
+        <td>111858.77</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200110</td>
+        <td>Oceania</td>
+        <td>94510.46</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200111</td>
+        <td>Oceania</td>
+        <td>78982.09</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>200112</td>
+        <td>Oceania</td>
+        <td>89601.27</td>
+        <td>1</td>
+    </tr>
+</table>
+
+
+
+<h2 id="5번-1"><a href="#5번-1" class="headerlink" title="5번"></a>5번</h2><p>5장 연습문제 5번의 정답 결과를 이용해 다음과 같이 지역별, 대출종류별, 월별 대출잔액과 지역별 파티션을 만들어 대출종류별 대출잔액의 %를 구하는 쿼리를 작성해보자</p>
+<hr>
+<h2 id="지역-대출종류-201111-201112-201210-201211-201212-203110-201311"><a href="#지역-대출종류-201111-201112-201210-201211-201212-203110-201311" class="headerlink" title="지역    대출종류        201111         201112    201210    201211   201212   203110    201311"></a>지역    대출종류        201111         201112    201210    201211   201212   203110    201311</h2><p>서울    기타대출       73996.9( 36% )<br>서울    주택담보대출   130105.9( 64% )<br>부산<br>…<br>…</p>
+<hr>
+<h3 id="문제해결과정-8"><a href="#문제해결과정-8" class="headerlink" title="문제해결과정"></a>문제해결과정</h3><p>일단 5장의 테이블 형태와 그 코드</p>
+<hr>
+<h2 id="지역-201111-201112-201210-201211-201212-203110-201311"><a href="#지역-201111-201112-201210-201211-201212-203110-201311" class="headerlink" title="지역   201111   201112    201210    201211   201212   203110    201311"></a>지역   201111   201112    201210    201211   201212   203110    201311</h2><p>서울<br>부산<br>…<br>…</p>
+<hr>
+<pre><code>SELECT REGION, 
+       SUM(AMT1) AS &quot;201111&quot;, 
+       SUM(AMT2) AS &quot;201112&quot;, 
+       SUM(AMT3) AS &quot;201210&quot;, 
+       SUM(AMT4) AS &quot;201211&quot;, 
+       SUM(AMT5) AS &quot;201312&quot;, 
+       SUM(AMT6) AS &quot;201310&quot;,
+       SUM(AMT6) AS &quot;201311&quot;
+  FROM ( 
+         SELECT REGION,
+                CASE WHEN PERIOD = &#39;201111&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT1,
+                CASE WHEN PERIOD = &#39;201112&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT2,
+                CASE WHEN PERIOD = &#39;201210&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT3, 
+                CASE WHEN PERIOD = &#39;201211&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT4, 
+                CASE WHEN PERIOD = &#39;201212&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT5, 
+                CASE WHEN PERIOD = &#39;201310&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT6,
+                CASE WHEN PERIOD = &#39;201311&#39; THEN LOAN_JAN_AMT ELSE 0 END AMT7
+         FROM KOR_LOAN_STATUS
+       )
+GROUP BY REGION
+ORDER BY REGION;
+</code></pre>
+<p>기존 코드에 대출 종류와 대출잔액의 %를 추가하면 된다<br>백분율을 구하는 것은 RATIO_TO_REPORT를 사용하면 된다</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">WITH</span> basis <span class="token keyword">AS</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                    region
+                    <span class="token punctuation">,</span> gubun
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT1<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT1
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT2<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT2
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT3<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT3
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT4<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT4
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT5<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT5
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT6<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT6
+                    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>AMT7<span class="token punctuation">)</span> <span class="token keyword">AS</span> AMT7
+               <span class="token keyword">FROM</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span>
+                        region
+                        <span class="token punctuation">,</span> gubun
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201111'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT1
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201112'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT2
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201210'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT3
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201211'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT4
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201212'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT5
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201310'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT6
+                        <span class="token punctuation">,</span> <span class="token keyword">CASE</span> <span class="token keyword">WHEN</span> period <span class="token operator">=</span> <span class="token string">'201311'</span> <span class="token keyword">THEN</span> loan_jan_amt <span class="token keyword">ELSE</span> <span class="token number">0</span> <span class="token keyword">END</span> AMT7
+                     <span class="token keyword">FROM</span> kor_loan_status<span class="token punctuation">)</span>
+               <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> region<span class="token punctuation">,</span> gubun<span class="token punctuation">)</span>
+<span class="token keyword">SELECT</span>
+    region
+    <span class="token punctuation">,</span> gubun
+    <span class="token punctuation">,</span> AMT1 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt1<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201111"</span>
+    <span class="token punctuation">,</span> AMT2 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt2<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201112"</span>
+    <span class="token punctuation">,</span> AMT3 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt3<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201210"</span>
+    <span class="token punctuation">,</span> AMT4 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt4<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201211"</span>
+    <span class="token punctuation">,</span> AMT5 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt5<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201212"</span>
+    <span class="token punctuation">,</span> AMT6 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt6<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201310"</span>
+    <span class="token punctuation">,</span> AMT7 <span class="token operator">||</span> <span class="token string">'('</span> <span class="token operator">||</span> <span class="token function">ROUND</span><span class="token punctuation">(</span>RATIO_TO_REPORT<span class="token punctuation">(</span>amt7<span class="token punctuation">)</span> <span class="token keyword">OVER</span> <span class="token punctuation">(</span><span class="token keyword">PARTITION</span> <span class="token keyword">BY</span> REGION<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">||</span> <span class="token string">'%)'</span> <span class="token keyword">AS</span> <span class="token string">"201311"</span>
+<span class="token keyword">FROM</span> basis
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> region
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>region</th>
+        <th>gubun</th>
+        <th>201111</th>
+        <th>201112</th>
+        <th>201210</th>
+        <th>201211</th>
+        <th>201212</th>
+        <th>201310</th>
+        <th>201311</th>
+    </tr>
+    <tr>
+        <td>강원</td>
+        <td>기타대출</td>
+        <td>11502.4(71%)</td>
+        <td>11677.5(71%)</td>
+        <td>12025.6(71%)</td>
+        <td>12093.6(71%)</td>
+        <td>12366.1(71%)</td>
+        <td>12778.9(70%)</td>
+        <td>12893.6(70%)</td>
+    </tr>
+    <tr>
+        <td>강원</td>
+        <td>주택담보대출</td>
+        <td>4627.4(29%)</td>
+        <td>4683.1(29%)</td>
+        <td>4945.2(29%)</td>
+        <td>4951.5(29%)</td>
+        <td>5083.6(29%)</td>
+        <td>5411.6(30%)</td>
+        <td>5459.2(30%)</td>
+    </tr>
+    <tr>
+        <td>경기</td>
+        <td>기타대출</td>
+        <td>167394.3(61%)</td>
+        <td>168444.1(61%)</td>
+        <td>170357.3(61%)</td>
+        <td>170191.9(61%)</td>
+        <td>171441.8(61%)</td>
+        <td>172518.1(61%)</td>
+        <td>173416.4(61%)</td>
+    </tr>
+    <tr>
+        <td>경기</td>
+        <td>주택담보대출</td>
+        <td>108188.5(39%)</td>
+        <td>109028.8(39%)</td>
+        <td>109371.5(39%)</td>
+        <td>108928(39%)</td>
+        <td>110059.4(39%)</td>
+        <td>108957.4(39%)</td>
+        <td>109400(39%)</td>
+    </tr>
+    <tr>
+        <td>경남</td>
+        <td>기타대출</td>
+        <td>29389.4(67%)</td>
+        <td>29904.2(67%)</td>
+        <td>32289.4(66%)</td>
+        <td>32680(66%)</td>
+        <td>33579.4(65%)</td>
+        <td>36254.3(65%)</td>
+        <td>36746.5(65%)</td>
+    </tr>
+    <tr>
+        <td>경남</td>
+        <td>주택담보대출</td>
+        <td>14695.4(33%)</td>
+        <td>15062.4(33%)</td>
+        <td>16985.4(34%)</td>
+        <td>17168.8(34%)</td>
+        <td>17789.1(35%)</td>
+        <td>19560.1(35%)</td>
+        <td>19809.6(35%)</td>
+    </tr>
+    <tr>
+        <td>경북</td>
+        <td>기타대출</td>
+        <td>18616.4(70%)</td>
+        <td>18912.8(70%)</td>
+        <td>19667(69%)</td>
+        <td>19850(70%)</td>
+        <td>20232.7(69%)</td>
+        <td>21706.6(69%)</td>
+        <td>22060.9(69%)</td>
+    </tr>
+    <tr>
+        <td>경북</td>
+        <td>주택담보대출</td>
+        <td>8162.1(30%)</td>
+        <td>8277.4(30%)</td>
+        <td>8665(31%)</td>
+        <td>8680.7(30%)</td>
+        <td>8907.1(31%)</td>
+        <td>9684.4(31%)</td>
+        <td>9862(31%)</td>
+    </tr>
+    <tr>
+        <td>광주</td>
+        <td>기타대출</td>
+        <td>13900.7(61%)</td>
+        <td>14209.9(61%)</td>
+        <td>14645(61%)</td>
+        <td>14720.2(61%)</td>
+        <td>14956.4(61%)</td>
+        <td>15490.5(61%)</td>
+        <td>15709.6(61%)</td>
+    </tr>
+    <tr>
+        <td>광주</td>
+        <td>주택담보대출</td>
+        <td>8731.7(39%)</td>
+        <td>8964.2(39%)</td>
+        <td>9461.4(39%)</td>
+        <td>9458.6(39%)</td>
+        <td>9596.4(39%)</td>
+        <td>9931(39%)</td>
+        <td>10062.2(39%)</td>
+    </tr>
+    <tr>
+        <td>대구</td>
+        <td>기타대출</td>
+        <td>21882.3(61%)</td>
+        <td>22117.7(61%)</td>
+        <td>23195(60%)</td>
+        <td>23366(60%)</td>
+        <td>23966(60%)</td>
+        <td>25462.8(60%)</td>
+        <td>25769.5(60%)</td>
+    </tr>
+    <tr>
+        <td>대구</td>
+        <td>주택담보대출</td>
+        <td>14043.5(39%)</td>
+        <td>14229(39%)</td>
+        <td>15154.5(40%)</td>
+        <td>15260.8(40%)</td>
+        <td>15684.4(40%)</td>
+        <td>16821.8(40%)</td>
+        <td>17043.7(40%)</td>
+    </tr>
+    <tr>
+        <td>대전</td>
+        <td>기타대출</td>
+        <td>16360.6(61%)</td>
+        <td>16722.5(61%)</td>
+        <td>17225.4(61%)</td>
+        <td>17347.9(61%)</td>
+        <td>17502.9(61%)</td>
+        <td>18559(60%)</td>
+        <td>18833.4(61%)</td>
+    </tr>
+    <tr>
+        <td>대전</td>
+        <td>주택담보대출</td>
+        <td>10394.2(39%)</td>
+        <td>10733.2(39%)</td>
+        <td>11169.9(39%)</td>
+        <td>11210(39%)</td>
+        <td>11349.4(39%)</td>
+        <td>12126(40%)</td>
+        <td>12285.7(39%)</td>
+    </tr>
+    <tr>
+        <td>부산</td>
+        <td>기타대출</td>
+        <td>35163.1(59%)</td>
+        <td>35570.6(59%)</td>
+        <td>37191.2(59%)</td>
+        <td>37286(59%)</td>
+        <td>38040.2(59%)</td>
+        <td>39979.4(58%)</td>
+        <td>40463.3(58%)</td>
+    </tr>
+    <tr>
+        <td>부산</td>
+        <td>주택담보대출</td>
+        <td>23936.8(41%)</td>
+        <td>24328.3(41%)</td>
+        <td>26128.9(41%)</td>
+        <td>26137.2(41%)</td>
+        <td>26795.2(41%)</td>
+        <td>28422(42%)</td>
+        <td>28794.1(42%)</td>
+    </tr>
+    <tr>
+        <td>서울</td>
+        <td>기타대출</td>
+        <td>204102.8(61%)</td>
+        <td>204275.7(61%)</td>
+        <td>202557.1(61%)</td>
+        <td>202887.5(61%)</td>
+        <td>203344.9(61%)</td>
+        <td>204918.8(62%)</td>
+        <td>205644.3(62%)</td>
+    </tr>
+    <tr>
+        <td>서울</td>
+        <td>주택담보대출</td>
+        <td>130105.9(39%)</td>
+        <td>130452.6(39%)</td>
+        <td>128097.2(39%)</td>
+        <td>127706.5(39%)</td>
+        <td>128227.4(39%)</td>
+        <td>128066.1(38%)</td>
+        <td>128418.4(38%)</td>
+    </tr>
+    <tr>
+        <td>세종</td>
+        <td>기타대출</td>
+        <td>0(%)</td>
+        <td>0(%)</td>
+        <td>1655.1(65%)</td>
+        <td>1766.3(64%)</td>
+        <td>1814.5(64%)</td>
+        <td>2583.7(62%)</td>
+        <td>2653.4(62%)</td>
+    </tr>
+    <tr>
+        <td>세종</td>
+        <td>주택담보대출</td>
+        <td>0(%)</td>
+        <td>0(%)</td>
+        <td>907.6(35%)</td>
+        <td>1002.9(36%)</td>
+        <td>1018.9(36%)</td>
+        <td>1557.8(38%)</td>
+        <td>1611.4(38%)</td>
+    </tr>
+    <tr>
+        <td>울산</td>
+        <td>기타대출</td>
+        <td>11007.3(63%)</td>
+        <td>11130(63%)</td>
+        <td>12156.2(62%)</td>
+        <td>12262.3(62%)</td>
+        <td>12376.9(62%)</td>
+        <td>13193.9(62%)</td>
+        <td>13336.2(62%)</td>
+    </tr>
+    <tr>
+        <td>울산</td>
+        <td>주택담보대출</td>
+        <td>6517(37%)</td>
+        <td>6627.5(37%)</td>
+        <td>7340.3(38%)</td>
+        <td>7385.6(38%)</td>
+        <td>7540.4(38%)</td>
+        <td>8065.8(38%)</td>
+        <td>8152.6(38%)</td>
+    </tr>
+    <tr>
+        <td>인천</td>
+        <td>기타대출</td>
+        <td>40404.2(58%)</td>
+        <td>40556.2(58%)</td>
+        <td>40916.8(58%)</td>
+        <td>40895.7(58%)</td>
+        <td>41106(58%)</td>
+        <td>40440.7(58%)</td>
+        <td>40650.2(58%)</td>
+    </tr>
+    <tr>
+        <td>인천</td>
+        <td>주택담보대출</td>
+        <td>29724.9(42%)</td>
+        <td>29871.7(42%)</td>
+        <td>30130.7(42%)</td>
+        <td>30064.6(42%)</td>
+        <td>30237.2(42%)</td>
+        <td>29355.3(42%)</td>
+        <td>29478.8(42%)</td>
+    </tr>
+    <tr>
+        <td>전남</td>
+        <td>기타대출</td>
+        <td>12274.4(70%)</td>
+        <td>12441.4(70%)</td>
+        <td>12921.8(69%)</td>
+        <td>13069.7(69%)</td>
+        <td>13255.9(69%)</td>
+        <td>13858.3(69%)</td>
+        <td>14016.3(69%)</td>
+    </tr>
+    <tr>
+        <td>전남</td>
+        <td>주택담보대출</td>
+        <td>5220.5(30%)</td>
+        <td>5327.7(30%)</td>
+        <td>5722.2(31%)</td>
+        <td>5808.9(31%)</td>
+        <td>5925.4(31%)</td>
+        <td>6227.9(31%)</td>
+        <td>6296.4(31%)</td>
+    </tr>
+    <tr>
+        <td>전북</td>
+        <td>기타대출</td>
+        <td>14725.2(67%)</td>
+        <td>14972.9(67%)</td>
+        <td>15685.7(66%)</td>
+        <td>15802.6(67%)</td>
+        <td>16153.1(66%)</td>
+        <td>17096.3(66%)</td>
+        <td>17285.8(66%)</td>
+    </tr>
+    <tr>
+        <td>전북</td>
+        <td>주택담보대출</td>
+        <td>7274.9(33%)</td>
+        <td>7447.5(33%)</td>
+        <td>7931.6(34%)</td>
+        <td>7959.4(33%)</td>
+        <td>8190.8(34%)</td>
+        <td>8665.3(34%)</td>
+        <td>8775.9(34%)</td>
+    </tr>
+    <tr>
+        <td>제주</td>
+        <td>기타대출</td>
+        <td>4500(76%)</td>
+        <td>4611(76%)</td>
+        <td>4615.7(74%)</td>
+        <td>4667.8(73%)</td>
+        <td>4818.7(73%)</td>
+        <td>5142.7(72%)</td>
+        <td>5209.2(72%)</td>
+    </tr>
+    <tr>
+        <td>제주</td>
+        <td>주택담보대출</td>
+        <td>1420.8(24%)</td>
+        <td>1477.8(24%)</td>
+        <td>1659.9(26%)</td>
+        <td>1683.9(27%)</td>
+        <td>1767.3(27%)</td>
+        <td>1993.8(28%)</td>
+        <td>2021.1(28%)</td>
+    </tr>
+    <tr>
+        <td>충남</td>
+        <td>기타대출</td>
+        <td>21994.5(70%)</td>
+        <td>22197.1(70%)</td>
+        <td>21429.6(69%)</td>
+        <td>21488.4(69%)</td>
+        <td>21813.7(69%)</td>
+        <td>22402.9(69%)</td>
+        <td>22602.3(69%)</td>
+    </tr>
+    <tr>
+        <td>충남</td>
+        <td>주택담보대출</td>
+        <td>9601.3(30%)</td>
+        <td>9710.2(30%)</td>
+        <td>9422.7(31%)</td>
+        <td>9444.8(31%)</td>
+        <td>9618.1(31%)</td>
+        <td>9934.2(31%)</td>
+        <td>10067.4(31%)</td>
+    </tr>
+    <tr>
+        <td>충북</td>
+        <td>기타대출</td>
+        <td>11642.5(67%)</td>
+        <td>11862(67%)</td>
+        <td>12598.9(68%)</td>
+        <td>12726.4(68%)</td>
+        <td>13089.1(67%)</td>
+        <td>13691.1(67%)</td>
+        <td>13830.4(67%)</td>
+    </tr>
+    <tr>
+        <td>충북</td>
+        <td>주택담보대출</td>
+        <td>5649.6(33%)</td>
+        <td>5784.1(33%)</td>
+        <td>6055(32%)</td>
+        <td>6123.9(32%)</td>
+        <td>6393.1(33%)</td>
+        <td>6635.4(33%)</td>
+        <td>6698.4(33%)</td>
+    </tr>
+</table>
+
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

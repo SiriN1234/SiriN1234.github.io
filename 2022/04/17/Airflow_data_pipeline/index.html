@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Dags 폴더 생성
+프로젝트 Root 하단에 Dags 폴더를 만든 후 dags 폴더를 확인한다
+
+
+가상의 데이터 생성
+이번 테스트에서 사용할 라이브러리가 없다면 우선 설치한다
+
+pip3 install faker pandas
+
+
+data 디렉토리를 만든다
+faker 라이"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Airflow 데이터 파이프라인 구축 예제"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Dags 폴더 생성
+프로젝트 Root 하단에 Dags 폴더를 만든 후 dags 폴더를 확인한다
+
+
+가상의 데이터 생성
+이번 테스트에서 사용할 라이브러리가 없다면 우선 설치한다
+
+pip3 install faker pandas
+
+
+data 디렉토리를 만든다
+faker 라이"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Airflow 데이터 파이프라인 구축 예제 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Airflow 데이터 파이프라인 구축 예제</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-04-17
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Settings/">#Settings</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="Dags-폴더-생성"><a href="#Dags-폴더-생성" class="headerlink" title="Dags 폴더 생성"></a><strong><strong>Dags 폴더 생성</strong></strong></h2><ul>
+<li>프로젝트 Root 하단에 Dags 폴더를 만든 후 dags 폴더를 확인한다</li>
+</ul>
+<p><img src="/images/Airflow_data_pipeline/Untitled.png" alt="Untitled"></p>
+<h2 id="가상의-데이터-생성"><a href="#가상의-데이터-생성" class="headerlink" title="가상의 데이터 생성"></a><strong><strong>가상의 데이터 생성</strong></strong></h2><ul>
+<li>이번 테스트에서 사용할 라이브러리가 없다면 우선 설치한다</li>
+</ul>
+<p><code>pip3 install faker pandas</code></p>
+<p><img src="/images/Airflow_data_pipeline/Untitled%201.png" alt="Untitled"></p>
+<ul>
+<li>data 디렉토리를 만든다</li>
+<li>faker 라이브러리를 활용하여 가상의 데이터를 생성한다. (파일 경로 : data&#x2F;step01_writecsv.py)</li>
+</ul>
+<p><code>vi step01_writecsv.py</code></p>
+<pre class=" language-jsx"><code class="language-jsx"><span class="token keyword">from</span> faker <span class="token keyword">import</span> Faker
+<span class="token keyword">import</span> csv
+output<span class="token operator">=</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'data.csv'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">)</span>
+fake<span class="token operator">=</span><span class="token function">Faker</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+header<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token string">'age'</span><span class="token punctuation">,</span><span class="token string">'street'</span><span class="token punctuation">,</span><span class="token string">'city'</span><span class="token punctuation">,</span><span class="token string">'state'</span><span class="token punctuation">,</span><span class="token string">'zip'</span><span class="token punctuation">,</span><span class="token string">'lng'</span><span class="token punctuation">,</span><span class="token string">'lat'</span><span class="token punctuation">]</span>
+mywriter<span class="token operator">=</span>csv<span class="token punctuation">.</span><span class="token function">writer</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span>
+mywriter<span class="token punctuation">.</span><span class="token function">writerow</span><span class="token punctuation">(</span>header<span class="token punctuation">)</span>
+<span class="token keyword">for</span> r <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    mywriter<span class="token punctuation">.</span><span class="token function">writerow</span><span class="token punctuation">(</span><span class="token punctuation">[</span>fake<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fake<span class="token punctuation">.</span><span class="token function">random_int</span><span class="token punctuation">(</span>min<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">,</span> max<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">,</span> step<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fake<span class="token punctuation">.</span><span class="token function">street_address</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fake<span class="token punctuation">.</span><span class="token function">city</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fake<span class="token punctuation">.</span><span class="token function">state</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fake<span class="token punctuation">.</span><span class="token function">zipcode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fake<span class="token punctuation">.</span><span class="token function">longitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fake<span class="token punctuation">.</span><span class="token function">latitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+output<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>생성된 후, 파일을 확인하도록 한다</li>
+</ul>
+<p><img src="/images/Airflow_data_pipeline/Untitled%202.png" alt="Untitled"></p>
+<h2 id="csv2json-파일-구축"><a href="#csv2json-파일-구축" class="headerlink" title="csv2json 파일 구축"></a><strong><strong>csv2json 파일 구축</strong></strong></h2><ul>
+<li>이번에는 CSV와 JSON 변환 파일을 구축하는 코드를 작성한다. (파일 경로 : dags&#x2F;<strong><a target="_blank" rel="noopener" href="http://csv2json.py/">csv2json.py</a></strong><br>)</li>
+<li>주요 목적 함수 csvToJson()의 역할은 <code>data/data.csv</code>파일을 불러와서 <code>fromAirflow.json</code>파일로 변경하는 것이다</li>
+<li>DAG는 csvToJson 함수를 하나의 작업으로 등록하는 과정을 담는다</li>
+<li>작업의 소유자, 시작일시, 실패 시 재시도 횟수, 재시도 지연시 시간을 지정한다</li>
+<li><code>print_starting &gt;&gt; csvJson</code> 에서 <code>&gt;&gt;</code> 는 하류 설정 연산자라고 부른다. (동의어 비트 자리이동 연산자)</li>
+</ul>
+<p><code>vi csv2json.py</code></p>
+<pre class=" language-jsx"><code class="language-jsx"><span class="token keyword">import</span> datetime <span class="token keyword">as</span> dt
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> timedelta
+
+<span class="token keyword">from</span> airflow <span class="token keyword">import</span> DAG
+<span class="token keyword">from</span> airflow<span class="token punctuation">.</span>operators<span class="token punctuation">.</span>bash <span class="token keyword">import</span> BashOperator
+<span class="token keyword">from</span> airflow<span class="token punctuation">.</span>operators<span class="token punctuation">.</span>python <span class="token keyword">import</span> PythonOperator
+
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+def <span class="token function">csvToJson</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    df<span class="token operator">=</span>pd<span class="token punctuation">.</span><span class="token function">read_csv</span><span class="token punctuation">(</span><span class="token string">'data/data.csv'</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span>r <span class="token keyword">in</span> df<span class="token punctuation">.</span><span class="token function">iterrows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>r<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    df<span class="token punctuation">.</span><span class="token function">to_json</span><span class="token punctuation">(</span><span class="token string">'fromAirflow.json'</span><span class="token punctuation">,</span>orient<span class="token operator">=</span><span class="token string">'records'</span><span class="token punctuation">)</span>
+
+default_args <span class="token operator">=</span> <span class="token entity" title="&#123;">&amp;#123;</span>
+    <span class="token string">'owner'</span><span class="token punctuation">:</span> <span class="token string">'sirin'</span><span class="token punctuation">,</span>
+    <span class="token string">'start_date'</span><span class="token punctuation">:</span> dt<span class="token punctuation">.</span><span class="token function">datetime</span><span class="token punctuation">(</span><span class="token number">2020</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'retries'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">'retry_delay'</span><span class="token punctuation">:</span> dt<span class="token punctuation">.</span><span class="token function">timedelta</span><span class="token punctuation">(</span>minutes<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token entity" title="&#125;">&amp;#125;</span>
+
+<span class="token keyword">with</span> <span class="token function">DAG</span><span class="token punctuation">(</span><span class="token string">'MyCSVDAG'</span><span class="token punctuation">,</span>
+         default_args<span class="token operator">=</span>default_args<span class="token punctuation">,</span>
+         schedule_interval<span class="token operator">=</span><span class="token function">timedelta</span><span class="token punctuation">(</span>minutes<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>      # <span class="token string">'0 * * * *'</span><span class="token punctuation">,</span>
+         <span class="token punctuation">)</span> <span class="token keyword">as</span> dag<span class="token punctuation">:</span>
+
+    print_starting <span class="token operator">=</span> <span class="token function">BashOperator</span><span class="token punctuation">(</span>task_id<span class="token operator">=</span><span class="token string">'starting'</span><span class="token punctuation">,</span>
+                               bash_command<span class="token operator">=</span><span class="token string">'echo "I am reading the CSV now....."'</span><span class="token punctuation">)</span>
+    
+    csvJson <span class="token operator">=</span> <span class="token function">PythonOperator</span><span class="token punctuation">(</span>task_id<span class="token operator">=</span><span class="token string">'convertCSVtoJson'</span><span class="token punctuation">,</span>
+                                 python_callable<span class="token operator">=</span>csvToJson<span class="token punctuation">)</span>
+
+print_starting <span class="token operator">></span><span class="token operator">></span> csvJson
+</code></pre>
+<h2 id="Airflow-Webserver-및-Scheduler-동시-실행"><a href="#Airflow-Webserver-및-Scheduler-동시-실행" class="headerlink" title="Airflow Webserver 및 Scheduler 동시 실행"></a><strong><strong>Airflow Webserver 및 Scheduler 동시 실행</strong></strong></h2><ul>
+<li>이제 웹서버와 스케쥴러를 동시에 실행한다 (터미널을 2개 열어야 함에 주의한다)</li>
+</ul>
+<pre class=" language-jsx"><code class="language-jsx">airflow webserver <span class="token operator">-</span>p <span class="token number">8080</span>
+airflow scheduler
+</code></pre>
+<p><img src="/images/Airflow_data_pipeline/Untitled%203.png" alt="Untitled"></p>
+<p><img src="/images/Airflow_data_pipeline/Untitled%204.png" alt="Untitled"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

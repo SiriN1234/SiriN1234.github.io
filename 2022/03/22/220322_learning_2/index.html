@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="클래스를 만드는 목적
+코드의 간결화
+코드를 재사용
+
+
+여러 라이브러리 –&amp;gt; 클래스로 구현이 됨
+list 클래스, str 클래스
+객체로 씀
+변수명으로 정의
+
+
+여러 클래스들이 모여서 하나의 라이브러리가 됨
+장고&amp;#x2F; 웹개발 &amp;#x2F; 머신러닝 &amp;#x2F; 시"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="2022.03.22 수업내용과 실습2"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="클래스를 만드는 목적
+코드의 간결화
+코드를 재사용
+
+
+여러 라이브러리 –&amp;gt; 클래스로 구현이 됨
+list 클래스, str 클래스
+객체로 씀
+변수명으로 정의
+
+
+여러 클래스들이 모여서 하나의 라이브러리가 됨
+장고&amp;#x2F; 웹개발 &amp;#x2F; 머신러닝 &amp;#x2F; 시"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>2022.03.22 수업내용과 실습2 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>2022.03.22 수업내용과 실습2</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-03-22
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Python/">#Python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="클래스를-만드는-목적"><a href="#클래스를-만드는-목적" class="headerlink" title="클래스를 만드는 목적"></a>클래스를 만드는 목적</h1><ul>
+<li>코드의 간결화<ul>
+<li>코드를 재사용</li>
+</ul>
+</li>
+<li>여러 라이브러리 –&gt; 클래스로 구현이 됨<ul>
+<li>list 클래스, str 클래스</li>
+<li>객체로 씀</li>
+<li>변수명으로 정의</li>
+</ul>
+</li>
+<li>여러 클래스들이 모여서 하나의 라이브러리가 됨<ul>
+<li>장고&#x2F; 웹개발 &#x2F; 머신러닝 &#x2F; 시각화 &#x2F; 데이터 전처리</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">:</span> 
+
+  <span class="token comment" spellcheck="true"># class attribute</span>
+  country <span class="token operator">=</span> <span class="token string">"korean"</span>
+
+  <span class="token comment" spellcheck="true"># instance attribute</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+  kim <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Kim"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+  lee <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Lee"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># access class attribute</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"kim은 &amp;#123;&amp;#125;"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>kim<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lee는 &amp;#123;&amp;#125;"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>lee<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>kim은 korean
+lee는 korean
+</code></pre>
+<h2 id="instance-메서드-생성"><a href="#instance-메서드-생성" class="headerlink" title="instance 메서드 생성"></a>instance 메서드 생성</h2><ul>
+<li>list.append(), list.extend()</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">:</span> 
+
+  <span class="token comment" spellcheck="true"># class attribute</span>
+  country <span class="token operator">=</span> <span class="token string">"korean"</span>
+
+  <span class="token comment" spellcheck="true"># instance attribute</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+  <span class="token comment" spellcheck="true"># instance method 정의</span>
+  <span class="token keyword">def</span> <span class="token function">singing</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> songtitle<span class="token punctuation">,</span> sales<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"&amp;#123;&amp;#125; 판매량 &amp;#123;&amp;#125; 된 &amp;#123;&amp;#125;을 노래합니다"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> sales<span class="token punctuation">,</span> songtitle<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+  kim <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Kim"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+  lee <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Lee"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># access class attribute</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"kim은 &amp;#123;&amp;#125;"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>kim<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lee는 &amp;#123;&amp;#125;"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>lee<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># call instance method</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>kim<span class="token punctuation">.</span>singing<span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>lee<span class="token punctuation">.</span>singing<span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>kim은 korean
+lee는 korean
+Kim 판매량 10 된 A을 노래합니다
+Lee 판매량 100 된 B을 노래합니다
+</code></pre>
+<pre class=" language-python"><code class="language-python">name <span class="token operator">=</span> <span class="token string">"lee"</span>
+songtitle <span class="token operator">=</span> <span class="token string">"B"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&amp;#123;&amp;#125; &amp;#123;&amp;#125;을 노래합니다"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>name<span class="token punctuation">,</span> songtitle<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>lee B을 노래합니다
+</code></pre>
+<h2 id="클래스-상속"><a href="#클래스-상속" class="headerlink" title="클래스 상속"></a>클래스 상속</h2><ul>
+<li>부모님 집 # 부모 클래스 instance<ul>
+<li>냉장고, 세탁기, tv, etc</li>
+<li>사용은 같이 함</li>
+</ul>
+</li>
+<li>직접 돈을 모음<ul>
+<li>개인 노트북 구매 (개인 방에 비치) # 자식 클래스 instance method, attribute 추가확장</li>
+<li>노트북은 자신 것이지만, 추가 가전 제품을 구매해서 확장</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">:</span>
+  
+  <span class="token comment" spellcheck="true"># instance attribute</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+  <span class="token comment" spellcheck="true"># instance method 정의</span>
+  <span class="token keyword">def</span> <span class="token function">whoAmI</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I am Parent"</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">singing</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> songtitle<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+     <span class="token keyword">return</span> <span class="token string">"&amp;#123;&amp;#125; &amp;#123;&amp;#125;을 노래합니다"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">,</span> songtitle<span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">dancing</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"&amp;#123;&amp;#125; 현재 춤을 춥니다"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Child</span><span class="token punctuation">(</span>Parent<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">:</span> 
+    <span class="token comment" spellcheck="true"># super() function 부모 클래스에서 받아옴</span>
+    super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Child Class is ON"</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">whoAmI</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I am Child"</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">studying</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I am Fast Runner"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+  child_kim <span class="token operator">=</span> Child<span class="token punctuation">(</span><span class="token string">"kim"</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">)</span>
+  parent_kim <span class="token operator">=</span> Parent<span class="token punctuation">(</span><span class="token string">"kim"</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>child_kim<span class="token punctuation">.</span>dancing<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>child_kim<span class="token punctuation">.</span>singing<span class="token punctuation">(</span><span class="token string">"연애"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true"># print(parent_kim.studying())</span>
+  child_kim<span class="token punctuation">.</span>whoAmI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  parent_kim<span class="token punctuation">.</span>whoAmI<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Child Class is ON
+kim 현재 춤을 춥니다
+kim 연애을 노래합니다
+I am Child
+I am Parent
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TV</span> <span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span> __maxprice <span class="token operator">=</span> <span class="token number">500</span>
+
+  <span class="token keyword">def</span> <span class="token function">sell</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Selling price : &amp;#123;&amp;#125;"</span> <span class="token punctuation">.</span>format<span class="token punctuation">(</span>self<span class="token punctuation">.</span>__maxprice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># set method, get method</span>
+  <span class="token keyword">def</span> <span class="token function">setMaxPrice</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> price<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>__maxprice <span class="token operator">=</span> price
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+  tv <span class="token operator">=</span> TV<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  tv<span class="token punctuation">.</span>sell<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># change price</span>
+  <span class="token comment" spellcheck="true"># 안 바뀌는 코드의 예시</span>
+  tv<span class="token punctuation">.</span>__maxprice <span class="token operator">=</span> <span class="token number">1000</span>
+  tv<span class="token punctuation">.</span>sell<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment" spellcheck="true"># setMaxPrice</span>
+  <span class="token comment" spellcheck="true"># 값을 바꿀 수 있다 외부의 입력값을 업데이트 할 수 있다</span>
+  tv<span class="token punctuation">.</span>setMaxPrice<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+  tv<span class="token punctuation">.</span>sell<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>Selling price : 500
+Selling price : 500
+Selling price : 1000
+</code></pre>
+<p>자식 클래스가 많이 있는 라이브러리는 사용자가 쓰기 까다로울 것 같은데, 많이 써주는 이유는 자식클래스 명 마다 의미를 주려고 그런 것인가?</p>
+<ul>
+<li>특수 목적을 해결하기 위해서 라이브러리를 만듦</li>
+<li>초기 버전은 3개 클래스 정도 만들면 해결이 되겠지?<ul>
+<li>버그 나오고, 이슈 터기조 –&gt; 개발자들이 해결</li>
+</ul>
+</li>
+<li>2개 더 만들고 다시 배포</li>
+</ul>
+<h2 id="클래스-내부-조건문"><a href="#클래스-내부-조건문" class="headerlink" title="클래스 내부 조건문"></a>클래스 내부 조건문</h2><ul>
+<li>init constructor에 조건문을 써보자</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">:</span>
+
+  <span class="token comment" spellcheck="true"># init constructor</span>
+  <span class="token comment" spellcheck="true"># name, salary</span>
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> salary <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> 
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+
+    <span class="token comment" spellcheck="true"># 조건문 추가</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>salary <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>salary <span class="token operator">=</span> salary
+    <span class="token keyword">else</span> <span class="token punctuation">:</span>
+      self<span class="token punctuation">.</span>salary <span class="token operator">=</span> <span class="token number">0</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"급여는 0원이 될 수 없다. 다시 입력하세요 : "</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">def</span> <span class="token function">update_salary</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> amount<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># self.salary = self.salary + amount</span>
+    self<span class="token punctuation">.</span>salary <span class="token operator">+=</span> amount
+
+  <span class="token keyword">def</span> <span class="token function">weekly_salary</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>salary <span class="token operator">/</span> <span class="token number">7</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+  emp01 <span class="token operator">=</span> Employee<span class="token punctuation">(</span><span class="token string">"Han"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">50000</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>emp01<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>emp01<span class="token punctuation">.</span>salary<span class="token punctuation">)</span>
+  emp01<span class="token punctuation">.</span>salary <span class="token operator">=</span> emp01<span class="token punctuation">.</span>salary <span class="token operator">+</span> <span class="token number">1500</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>emp01<span class="token punctuation">.</span>salary<span class="token punctuation">)</span>
+  emp01<span class="token punctuation">.</span>update_salary<span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>emp01<span class="token punctuation">.</span>salary<span class="token punctuation">)</span>
+  week_salary <span class="token operator">=</span> emp01<span class="token punctuation">.</span>weekly_salary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>week_salary<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>급여는 0원이 될 수 없다. 다시 입력하세요 : 
+Han
+0
+1500
+4500
+642.8571428571429
+</code></pre>
+<h2 id="클래스-Docstring"><a href="#클래스-Docstring" class="headerlink" title="클래스 Docstring"></a>클래스 Docstring</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""
+  사람을 표현하는 클래스
+
+  ...
+
+  Attributes
+  ----------
+  name : str
+    name of the person
+  
+  age : int
+    age of the person
+
+  Methods
+  ----------
+
+  info(additional = "")
+    Prints the person's name and age
+
+  """</span>
+
+  <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Constructs all the neccessary attributes for the person object
+
+    Parameters
+    ----------
+    name : str
+      name of the person
+  
+    age : int
+      age of the person
+
+    """</span>
+
+    self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+  <span class="token keyword">def</span> <span class="token function">info</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> additional <span class="token operator">=</span> None<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Person's info
+
+    Parameters
+    ----------
+    additional : str, optional
+      more info to be displayed (Default is None)
+
+    Returns
+    ----------
+    None
+
+    """</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'My name is &amp;#123;self.name&amp;#125;. I am &amp;#123;self.age&amp;#125; years old. '</span> <span class="token operator">+</span> additional<span class="token punctuation">)</span>
+
+
+  <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span> <span class="token punctuation">:</span>
+    person <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Han"</span><span class="token punctuation">,</span> age <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">)</span>
+    person<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"나의 직장은 00이다"</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># help(Person)</span>
+</code></pre>
+<pre><code>My name is Han. I am 20 years old. 나의 직장은 00이다
+</code></pre>
+<h1 id="4장-연습문제"><a href="#4장-연습문제" class="headerlink" title="4장 연습문제"></a>4장 연습문제</h1><h1 id="연습문제-1번"><a href="#연습문제-1번" class="headerlink" title="연습문제 1번"></a>연습문제 1번</h1><h2 id="주어진-자연수가-홀수인지-짝수인지-판별해-주는-함수-is-odd-를-작성해-보자"><a href="#주어진-자연수가-홀수인지-짝수인지-판별해-주는-함수-is-odd-를-작성해-보자" class="headerlink" title="주어진 자연수가 홀수인지 짝수인지 판별해 주는 함수(is_odd)를 작성해 보자."></a>주어진 자연수가 홀수인지 짝수인지 판별해 주는 함수(is_odd)를 작성해 보자.</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"자연수를 입력하세요 : "</span><span class="token punctuation">)</span>
+num <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">is_odd</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"짝수입니다"</span><span class="token punctuation">)</span>
+  <span class="token keyword">else</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"홀수입니다"</span><span class="token punctuation">)</span>
+
+is_odd<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>자연수를 입력하세요 : 
+3
+홀수입니다
+</code></pre>
+<h1 id="연습문제-2번"><a href="#연습문제-2번" class="headerlink" title="연습문제 2번"></a>연습문제 2번</h1><h2 id="입력으로-들어오는-모든-수의-평균-값을-계산해-주는-함수를-작성해-보자-단-입력으로-들어오는-수의-개수는-정해져-있지-않다"><a href="#입력으로-들어오는-모든-수의-평균-값을-계산해-주는-함수를-작성해-보자-단-입력으로-들어오는-수의-개수는-정해져-있지-않다" class="headerlink" title="입력으로 들어오는 모든 수의 평균 값을 계산해 주는 함수를 작성해 보자. (단 입력으로 들어오는 수의 개수는 정해져 있지 않다.)"></a>입력으로 들어오는 모든 수의 평균 값을 계산해 주는 함수를 작성해 보자. (단 입력으로 들어오는 수의 개수는 정해져 있지 않다.)</h2><pre class=" language-python"><code class="language-python">input_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">999</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"%d번째 숫자를 입력하세요(0을 입력하면 중단됨) : "</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  num <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"0을 입력해서 합산을 중단합니다"</span><span class="token punctuation">)</span>
+    <span class="token keyword">break</span>
+  <span class="token keyword">else</span> <span class="token punctuation">:</span>
+    input_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">avg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"평균값은 %f"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>sum<span class="token punctuation">(</span>input_list<span class="token punctuation">)</span> <span class="token operator">/</span> len<span class="token punctuation">(</span>input_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>avg<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>1번째 숫자를 입력하세요(0을 입력하면 중단됨) : 
+3
+2번째 숫자를 입력하세요(0을 입력하면 중단됨) : 
+4
+3번째 숫자를 입력하세요(0을 입력하면 중단됨) : 
+5
+4번째 숫자를 입력하세요(0을 입력하면 중단됨) : 
+0
+0을 입력해서 합산을 중단합니다
+평균값은 4.000000
+None
+</code></pre>
+<h1 id="연습문제-3번"><a href="#연습문제-3번" class="headerlink" title="연습문제 3번"></a>연습문제 3번</h1><h2 id="다음은-두-개의-숫자를-입력받아-더하여-돌려주는-프로그램이다"><a href="#다음은-두-개의-숫자를-입력받아-더하여-돌려주는-프로그램이다" class="headerlink" title="다음은 두 개의 숫자를 입력받아 더하여 돌려주는 프로그램이다."></a>다음은 두 개의 숫자를 입력받아 더하여 돌려주는 프로그램이다.</h2><pre><code>input1 = input(&quot;첫번째 숫자를 입력하세요:&quot;)
+input2 = input(&quot;두번째 숫자를 입력하세요:&quot;)
+
+total = input1 + input2
+print(&quot;두 수의 합은 %s 입니다&quot; % total)
+</code></pre>
+<h2 id="이-프로그램을-수행해-보자"><a href="#이-프로그램을-수행해-보자" class="headerlink" title="이 프로그램을 수행해 보자."></a>이 프로그램을 수행해 보자.</h2><pre><code>첫번째 숫자를 입력하세요:3
+두번째 숫자를 입력하세요:6
+두 수의 합은 36 입니다
+</code></pre>
+<h2 id="3과-6을-입력했을-때-9가-아닌-36이라는-결괏값을-돌려주었다-이-프로그램의-오류를-수정해-보자"><a href="#3과-6을-입력했을-때-9가-아닌-36이라는-결괏값을-돌려주었다-이-프로그램의-오류를-수정해-보자" class="headerlink" title="3과 6을 입력했을 때 9가 아닌 36이라는 결괏값을 돌려주었다. 이 프로그램의 오류를 수정해 보자."></a>3과 6을 입력했을 때 9가 아닌 36이라는 결괏값을 돌려주었다. 이 프로그램의 오류를 수정해 보자.</h2><pre class=" language-python"><code class="language-python">input1 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"첫번째 숫자를 입력하세요:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+input2 <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"두번째 숫자를 입력하세요:"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+total <span class="token operator">=</span> input1 <span class="token operator">+</span> input2
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"두 수의 합은 %s 입니다"</span> <span class="token operator">%</span> total<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>첫번째 숫자를 입력하세요:3
+두번째 숫자를 입력하세요:6
+두 수의 합은 9 입니다
+</code></pre>
+<h1 id="연습문제-4번"><a href="#연습문제-4번" class="headerlink" title="연습문제 4번"></a>연습문제 4번</h1><h2 id="다음-중-출력-결과가-다른-것-한-개를-골라-보자"><a href="#다음-중-출력-결과가-다른-것-한-개를-골라-보자" class="headerlink" title="다음 중 출력 결과가 다른 것 한 개를 골라 보자."></a>다음 중 출력 결과가 다른 것 한 개를 골라 보자.</h2><pre><code>print(&quot;you&quot; &quot;need&quot; &quot;python&quot;)
+print(&quot;you&quot;+&quot;need&quot;+&quot;python&quot;)
+print(&quot;you&quot;, &quot;need&quot;, &quot;python&quot;)
+print(&quot;&quot;.join([&quot;you&quot;, &quot;need&quot;, &quot;python&quot;]))
+</code></pre>
+<ul>
+<li>세 번째 출력에서 ,가 있기 때문에 띄어쓰기가 되서 출력이 된다</li>
+</ul>
+<h2 id="답-3번"><a href="#답-3번" class="headerlink" title="답 : 3번"></a>답 : 3번</h2>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="사전 작업
+ubuntu에서 경로를 잡는다
+  
+
+vi &amp;#x2F;etc&amp;#x2F;resolv.conf 실행 후 nameserver 8.8.8.8을 입력한다
+vi /etc/resolv.conf
+
+nameserver 8.8.8.8
+
+:w !sudo tee % &gt; /dev/"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Airflow 설치하기"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="사전 작업
+ubuntu에서 경로를 잡는다
+  
+
+vi &amp;#x2F;etc&amp;#x2F;resolv.conf 실행 후 nameserver 8.8.8.8을 입력한다
+vi /etc/resolv.conf
+
+nameserver 8.8.8.8
+
+:w !sudo tee % &gt; /dev/"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Airflow 설치하기 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Airflow 설치하기</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-04-16
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Settings/">#Settings</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="사전-작업"><a href="#사전-작업" class="headerlink" title="사전 작업"></a>사전 작업</h2><ul>
+<li><p>ubuntu에서 경로를 잡는다</p>
+<p>  <img src="/images/Airflow_install/Untitled.png" alt="Untitled"></p>
+</li>
+<li><p>vi &#x2F;etc&#x2F;resolv.conf 실행 후 nameserver 8.8.8.8을 입력한다</p>
+<pre class=" language-jsx"><code class="language-jsx">vi <span class="token operator">/</span>etc<span class="token operator">/</span>resolv<span class="token punctuation">.</span>conf
+
+nameserver <span class="token number">8.8</span><span class="token punctuation">.</span><span class="token number">8.8</span>
+
+<span class="token punctuation">:</span>w <span class="token operator">!</span>sudo tee <span class="token operator">%</span> <span class="token operator">></span> <span class="token operator">/</span>dev<span class="token operator">/</span><span class="token keyword">null</span>
+</code></pre>
+<p>  <img src="/images/Airflow_install/Untitled%201.png" alt="Untitled"></p>
+<p>  <img src="/images/Airflow_install/Untitled%202.png" alt="Untitled"></p>
+</li>
+<li><p>airflow를 설치하기 위해 pip를 설치한다 (이미 설치를 했었음)</p>
+</li>
+</ul>
+<p><code>sudo apt install python3-pip</code></p>
+<p><img src="/images/Airflow_install/Untitled%203.png" alt="Untitled"></p>
+<ul>
+<li>가상환경을 세팅할 디렉토리를 만들고 virtualenv 라이브러리를 설치한다</li>
+</ul>
+<p><code>sudo pip3 install virtualenv</code></p>
+<p><img src="/images/Airflow_install/Untitled%204.png" alt="Untitled"></p>
+<ul>
+<li>이 세팅할 디렉토리에서 가상환경을 생성한다</li>
+</ul>
+<p><code>virtualenv venv</code></p>
+<p><img src="/images/Airflow_install/Untitled%205.png" alt="Untitled"></p>
+<ul>
+<li>가상환경에 접속한다</li>
+</ul>
+<p><code>source venv/bin/activate</code></p>
+<ul>
+<li>.bashrc 파일을 수정한다</li>
+</ul>
+<p><code>vi ~/.bashrc</code></p>
+<ul>
+<li>파일을 연 후, 다음과 같은 코드를 추가한다 (&#x3D; 뒤에는 경로)</li>
+</ul>
+<p><code>export AIRFLOW_HOME=/mnt/c/airflow-test</code></p>
+<p><img src="/images/Airflow_install/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>파일을 닫을 때는 ESC → :wq 순서대로 작성한다.</li>
+<li>수정된 코드를 업데이트 하기 위해서는 아래와 같이 반영한다.</li>
+</ul>
+<p><code>source ~/.bashrc</code></p>
+<ul>
+<li>실제로 코드가 반영되었는지 확인하기 위해서는 다음과 같이 확인해본다 (현재 경로와 똑같이 나와야 한다)</li>
+</ul>
+<p><code>echo $AIRFLOW_HOME</code></p>
+<p><img src="/images/Airflow_install/Untitled%207.png" alt="Untitled"></p>
+<h2 id="Apache-Airflow-설치"><a href="#Apache-Airflow-설치" class="headerlink" title="Apache Airflow 설치"></a><strong><strong>Apache Airflow 설치</strong></strong></h2><ul>
+<li>다시 가상환경에 접속 후 PostgreSQL, Slack, Celery 패키지를 동시에 설치하는 코드를 작성한다</li>
+</ul>
+<p><code>pip3 install &#39;apache-airflow[postgres, slack, celery]&#39;</code></p>
+<p><img src="/images/Airflow_install/Untitled%208.png" alt="Untitled"></p>
+<ul>
+<li>username을 추가한다</li>
+</ul>
+<p><code>airflow users create --username sirin --password airflow --firstname han --lastname airflow --role Admin --email your_email@some.com</code></p>
+<p><img src="/images/Airflow_install/Untitled%209.png" alt="Untitled"></p>
+<ul>
+<li>에어플로 실행 위해 DB 초기화를 해줘야 한다</li>
+</ul>
+<p><code>airflow db init</code></p>
+<ul>
+<li>실제로 잘 구현이 되었는지 확인하기 위해 webserver를 실행한다</li>
+</ul>
+<p><code>airflow webserver -p 8080</code></p>
+<ul>
+<li>인터넷창에서 <code>localhost:8080</code>을 입력한다</li>
+</ul>
+<p><img src="/images/Airflow_install/Untitled%2010.png" alt="Untitled"></p>
+<p><img src="/images/Airflow_install/Untitled%2011.png" alt="Untitled"></p>
+<h2 id="Default-예제-제거하기"><a href="#Default-예제-제거하기" class="headerlink" title="Default 예제 제거하기"></a>Default 예제 제거하기</h2><ul>
+<li><code>code .</code>을 입력하면 vscode가 열린다</li>
+</ul>
+<p><img src="/images/Airflow_install/Untitled%2012.png" alt="Untitled"></p>
+<ul>
+<li><code>airflow.cfg</code>파일을 열고, <code>load_examples = True</code>로 되어 있는 것을 <code>load_examples = False</code>로 변경한다</li>
+<li>그 후에, 다시 터미널로 돌아와서 <code>airflow db reset</code> 실행한다 (Proceed? y 선택)</li>
+<li>webserver를 다시 실행한다</li>
+<li>예제가 전부 사라진 것을 확인할 수 있다</li>
+</ul>
+<p><img src="/images/Airflow_install/Untitled%2013.png" alt="Untitled"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

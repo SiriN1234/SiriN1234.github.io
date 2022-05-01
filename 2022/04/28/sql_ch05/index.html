@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="출처 : 오라클 SQL과 PL&amp;#x2F;SQL을 다루는 기술
+그룹 쿼리와 집합 연산자 알아 보기%load_ext sql
+
+The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
+
+%sql or"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="5장. 그룹 쿼리와 집합 연산자 알아 보기"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="출처 : 오라클 SQL과 PL&amp;#x2F;SQL을 다루는 기술
+그룹 쿼리와 집합 연산자 알아 보기%load_ext sql
+
+The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
+
+%sql or"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>5장. 그룹 쿼리와 집합 연산자 알아 보기 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>5장. 그룹 쿼리와 집합 연산자 알아 보기</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-04-28
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/SQL/">#SQL</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>출처 : 오라클 SQL과 PL&#x2F;SQL을 다루는 기술</p>
+<h1 id="그룹-쿼리와-집합-연산자-알아-보기"><a href="#그룹-쿼리와-집합-연산자-알아-보기" class="headerlink" title="그룹 쿼리와 집합 연산자 알아 보기"></a>그룹 쿼리와 집합 연산자 알아 보기</h1><pre class=" language-python"><code class="language-python"><span class="token operator">%</span>load_ext sql
+</code></pre>
+<pre><code>The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>sql oracle<span class="token punctuation">:</span><span class="token operator">//</span>ora_user<span class="token punctuation">:</span>sirin@<span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">1521</span><span class="token operator">/</span>myoracle
+</code></pre>
+<h1 id="기본-집계-함수"><a href="#기본-집계-함수" class="headerlink" title="기본 집계 함수"></a>기본 집계 함수</h1><h2 id="COUNT-expr"><a href="#COUNT-expr" class="headerlink" title="COUNT(expr)"></a>COUNT(expr)</h2><ul>
+<li>쿼리 결과 건수, 즉 전체 로우 수를 반환 (행 갯수)</li>
+<li>NULL값은 계산이 되지 않는다</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>sql SELECT count<span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> FROM employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>COUNT(*)</th>
+    </tr>
+    <tr>
+        <td>107</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-python"><code class="language-python"><span class="token operator">%</span>sql SELECT count<span class="token punctuation">(</span>employee_id<span class="token punctuation">)</span> FROM employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>COUNT(EMPLOYEE_ID)</th>
+    </tr>
+    <tr>
+        <td>107</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token comment" spellcheck="true">-- NULL이 들어있는 컬럼</span>
+
+<span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span>department_id<span class="token punctuation">)</span> <span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>COUNT(DEPARTMENT_ID)</th>
+    </tr>
+    <tr>
+        <td>106</td>
+    </tr>
+</table>
+
+
+
+<ul>
+<li>DISTICT를 붙이면 뒤따라 나오는 컬럼에 있는 유일한 값만 조회된다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> department_id<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>COUNT(DISTINCTDEPARTMENT_ID)</th>
+    </tr>
+    <tr>
+        <td>11</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> department_id
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">1</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+    </tr>
+    <tr>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>60</td>
+    </tr>
+    <tr>
+        <td>70</td>
+    </tr>
+    <tr>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>90</td>
+    </tr>
+    <tr>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>110</td>
+    </tr>
+    <tr>
+        <td>None</td>
+    </tr>
+</table>
+
+
+
+<h2 id="SUM-expr"><a href="#SUM-expr" class="headerlink" title="SUM(expr)"></a>SUM(expr)</h2><ul>
+<li>합계를 반환하는 함수</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token function">SUM</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>SUM(SALARY)</th>
+        <th>SUM(DISTINCTSALARY)</th>
+    </tr>
+    <tr>
+        <td>691416</td>
+        <td>409908</td>
+    </tr>
+</table>
+
+
+
+<h2 id="AVG-expr"><a href="#AVG-expr" class="headerlink" title="AVG(expr)"></a>AVG(expr)</h2><ul>
+<li>평균값을 반환한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token function">AVG</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> <span class="token function">AVG</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>AVG(SALARY)</th>
+        <th>AVG(DISTINCTSALARY)</th>
+    </tr>
+    <tr>
+        <td>6461.831775700934579439252336448598130841</td>
+        <td>7067.379310344827586206896551724137931034</td>
+    </tr>
+</table>
+
+
+
+<h2 id="MIN-expr-MAX-expr"><a href="#MIN-expr-MAX-expr" class="headerlink" title="MIN(expr), MAX(expr)"></a>MIN(expr), MAX(expr)</h2><ul>
+<li>최솟값, 최댓값을 반환한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    <span class="token function">MIN</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> <span class="token function">MAX</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>MIN(SALARY)</th>
+        <th>MAX(SALARY)</th>
+    </tr>
+    <tr>
+        <td>2100</td>
+        <td>24000</td>
+    </tr>
+</table>
+
+
+
+<h2 id="VARIANCE-expr-STDDEV-expr"><a href="#VARIANCE-expr-STDDEV-expr" class="headerlink" title="VARIANCE(expr), STDDEV(expr)"></a>VARIANCE(expr), STDDEV(expr)</h2><ul>
+<li>분산과 표준편차를 반환한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    VARIANCE<span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+    <span class="token punctuation">,</span> STDDEV<span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>VARIANCE(SALARY)</th>
+        <th>STDDEV(SALARY)</th>
+    </tr>
+    <tr>
+        <td>15284813.66954681713983424440134015164874</td>
+        <td>3909.579730552481921059198878167256201202</td>
+    </tr>
+</table>
+
+
+
+<h1 id="GROUP-BY-절과-HAVING-절"><a href="#GROUP-BY-절과-HAVING-절" class="headerlink" title="GROUP BY 절과 HAVING 절"></a>GROUP BY 절과 HAVING 절</h1><ul>
+<li>특정 그룹으로 묶어 데이터를 집계함</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    department_id<span class="token punctuation">,</span>
+    <span class="token function">SUM</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> department_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> department_id
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>department_id</th>
+        <th>SUM(SALARY)</th>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>4400</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>19000</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>24900</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>6500</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>156400</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>28800</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>10000</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>304500</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>58000</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>51608</td>
+    </tr>
+    <tr>
+        <td>110</td>
+        <td>20308</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>7000</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token comment" spellcheck="true">-- 2013년 지역별 가계대출 총 잔액</span>
+
+<span class="token keyword">SELECT</span>
+    period
+    <span class="token punctuation">,</span> region
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>loan_jan_amt<span class="token punctuation">)</span> totl_jan
+<span class="token keyword">FROM</span> kor_loan_status
+<span class="token keyword">WHERE</span> period <span class="token operator">LIKE</span> <span class="token string">'2013%'</span> <span class="token operator">AND</span> rownum <span class="token operator">&lt;=</span> <span class="token number">10</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> period<span class="token punctuation">,</span> region
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> period<span class="token punctuation">,</span> region
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>region</th>
+        <th>totl_jan</th>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>경남</td>
+        <td>36254.3</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>경북</td>
+        <td>21706.6</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>서울</td>
+        <td>128066.1</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>세종</td>
+        <td>2583.7</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>제주</td>
+        <td>5142.7</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>경남</td>
+        <td>36746.5</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>경북</td>
+        <td>22060.9</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>서울</td>
+        <td>128418.4</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>세종</td>
+        <td>2653.4</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>제주</td>
+        <td>5209.2</td>
+    </tr>
+</table>
+
+
+
+<h1 id="ROLLUP절과-CUBE-절"><a href="#ROLLUP절과-CUBE-절" class="headerlink" title="ROLLUP절과 CUBE 절"></a>ROLLUP절과 CUBE 절</h1><h2 id="ROLLUP-expr1-expr2-…"><a href="#ROLLUP-expr1-expr2-…" class="headerlink" title="ROLLUP(expr1, expr2, …)"></a>ROLLUP(expr1, expr2, …)</h2><ul>
+<li>expr로 명시한 표현식을 기준으로 집계한 결과, 즉 추가적인 집계 정보를 보여준다</li>
+<li>순차적으로 집계를 함</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    period
+    <span class="token punctuation">,</span> gubun
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>loan_jan_amt<span class="token punctuation">)</span> totl_nam
+<span class="token keyword">FROM</span> kor_loan_status
+<span class="token keyword">WHERE</span> period <span class="token operator">LIKE</span> <span class="token string">'2013%'</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> period<span class="token punctuation">,</span> gubun
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> period
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>gubun</th>
+        <th>totl_nam</th>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>기타대출</td>
+        <td>676078</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>주택담보대출</td>
+        <td>411415.9</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>기타대출</td>
+        <td>681121.3</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>주택담보대출</td>
+        <td>414236.9</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    period
+    <span class="token punctuation">,</span> gubun
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>loan_jan_amt<span class="token punctuation">)</span> totl_nam
+<span class="token keyword">FROM</span> kor_loan_status
+<span class="token keyword">WHERE</span> period <span class="token operator">LIKE</span> <span class="token string">'2013%'</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> ROLLUP<span class="token punctuation">(</span>period<span class="token punctuation">,</span> gubun<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 10월 합산, 11월 합산, 전체 합산도 같이 표시된다</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>gubun</th>
+        <th>totl_nam</th>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>기타대출</td>
+        <td>676078</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>주택담보대출</td>
+        <td>411415.9</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>None</td>
+        <td>1087493.9</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>기타대출</td>
+        <td>681121.3</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>주택담보대출</td>
+        <td>414236.9</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>None</td>
+        <td>1095358.2</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>None</td>
+        <td>2182852.1</td>
+    </tr>
+</table>
+
+
+
+<h2 id="CUBE-expr1-expr2-…"><a href="#CUBE-expr1-expr2-…" class="headerlink" title="CUBE(expr1, expr2, …)"></a>CUBE(expr1, expr2, …)</h2><ul>
+<li>CUBE는 명시한 표현식의 개수에 따라 가능한 모든 조합별로 집계한 결과를 반환한다</li>
+<li>2의 (expr 수)제곱 만큼 종류별로 집계 된다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    period
+    <span class="token punctuation">,</span> gubun
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>loan_jan_amt<span class="token punctuation">)</span> totl_nam
+<span class="token keyword">FROM</span> kor_loan_status
+<span class="token keyword">WHERE</span> period <span class="token operator">LIKE</span> <span class="token string">'2013%'</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> CUBE<span class="token punctuation">(</span>period<span class="token punctuation">,</span> gubun<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 10월 합산, 11월 합산, 기타대출 합산, 주택담보대출 합산, 전체 합산이 표시된다</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>gubun</th>
+        <th>totl_nam</th>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>None</td>
+        <td>2182852.1</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>기타대출</td>
+        <td>1357199.3</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>주택담보대출</td>
+        <td>825652.8</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>None</td>
+        <td>1087493.9</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>기타대출</td>
+        <td>676078</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>주택담보대출</td>
+        <td>411415.9</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>None</td>
+        <td>1095358.2</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>기타대출</td>
+        <td>681121.3</td>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>주택담보대출</td>
+        <td>414236.9</td>
+    </tr>
+</table>
+
+
+
+<h2 id="GROUPING-SETS-expr1-expr2-…"><a href="#GROUPING-SETS-expr1-expr2-…" class="headerlink" title="GROUPING SETS(expr1, expr2, …)"></a>GROUPING SETS(expr1, expr2, …)</h2><ul>
+<li>특성 항목에 대한 소계를 계산한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span>
+    period
+    <span class="token punctuation">,</span> gubun
+    <span class="token punctuation">,</span> <span class="token function">SUM</span><span class="token punctuation">(</span>loan_jan_amt<span class="token punctuation">)</span> totl_nam
+<span class="token keyword">FROM</span> kor_loan_status
+<span class="token keyword">WHERE</span> period <span class="token operator">LIKE</span> <span class="token string">'2013%'</span>
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> GROUPING SETS<span class="token punctuation">(</span>period<span class="token punctuation">,</span> gubun<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 기간별 합산과 구분에 따른 합산을 보여준다</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>period</th>
+        <th>gubun</th>
+        <th>totl_nam</th>
+    </tr>
+    <tr>
+        <td>201311</td>
+        <td>None</td>
+        <td>1095358.2</td>
+    </tr>
+    <tr>
+        <td>201310</td>
+        <td>None</td>
+        <td>1087493.9</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>주택담보대출</td>
+        <td>825652.8</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td>기타대출</td>
+        <td>1357199.3</td>
+    </tr>
+</table>
+
+
+
+<h1 id="집합-연산자"><a href="#집합-연산자" class="headerlink" title="집합 연산자"></a>집합 연산자</h1><ul>
+<li>먼저 한국과 일본의 수출품을 출력한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'한국'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> seq
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>LCD</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>휴대전화</td>
+    </tr>
+    <tr>
+        <td>환식탄화수소</td>
+    </tr>
+    <tr>
+        <td>무선송신기 디스플레이 부속품</td>
+    </tr>
+    <tr>
+        <td>철 또는 비합금강</td>
+    </tr>
+</table>
+
+
+
+
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'일본'</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> seq
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>반도체웨이퍼</td>
+    </tr>
+    <tr>
+        <td>화물차</td>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>건설기계</td>
+    </tr>
+    <tr>
+        <td>다이오드, 트랜지스터</td>
+    </tr>
+    <tr>
+        <td>기계류</td>
+    </tr>
+</table>
+
+
+
+<h2 id="UNION"><a href="#UNION" class="headerlink" title="UNION"></a>UNION</h2><ul>
+<li>합집합을 의미한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'한국'</span>
+<span class="token keyword">UNION</span> <span class="token comment" spellcheck="true">-- 합집합 개념 적용</span>
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'일본'</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>LCD</td>
+    </tr>
+    <tr>
+        <td>건설기계</td>
+    </tr>
+    <tr>
+        <td>기계류</td>
+    </tr>
+    <tr>
+        <td>다이오드, 트랜지스터</td>
+    </tr>
+    <tr>
+        <td>무선송신기 디스플레이 부속품</td>
+    </tr>
+    <tr>
+        <td>반도체웨이퍼</td>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+    <tr>
+        <td>철 또는 비합금강</td>
+    </tr>
+    <tr>
+        <td>화물차</td>
+    </tr>
+    <tr>
+        <td>환식탄화수소</td>
+    </tr>
+    <tr>
+        <td>휴대전화</td>
+    </tr>
+</table>
+
+
+
+<h2 id="UNION-ALL"><a href="#UNION-ALL" class="headerlink" title="UNION ALL"></a>UNION ALL</h2><ul>
+<li>UNION과 비슷하지만 중복된 항목도 모두 조회한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'한국'</span>
+<span class="token keyword">UNION</span> <span class="token keyword">ALL</span> <span class="token comment" spellcheck="true">-- 합집합 개념 적용</span>
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'일본'</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>LCD</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>휴대전화</td>
+    </tr>
+    <tr>
+        <td>환식탄화수소</td>
+    </tr>
+    <tr>
+        <td>무선송신기 디스플레이 부속품</td>
+    </tr>
+    <tr>
+        <td>철 또는 비합금강</td>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>반도체웨이퍼</td>
+    </tr>
+    <tr>
+        <td>화물차</td>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>건설기계</td>
+    </tr>
+    <tr>
+        <td>다이오드, 트랜지스터</td>
+    </tr>
+    <tr>
+        <td>기계류</td>
+    </tr>
+</table>
+
+
+
+<h2 id="INTERSECT"><a href="#INTERSECT" class="headerlink" title="INTERSECT"></a>INTERSECT</h2><ul>
+<li>교집합을 의미한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'한국'</span>
+<span class="token keyword">INTERSECT</span> <span class="token comment" spellcheck="true">-- 교집합 개념 적용</span>
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'일본'</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>선박</td>
+    </tr>
+    <tr>
+        <td>원유제외 석유류</td>
+    </tr>
+    <tr>
+        <td>자동차</td>
+    </tr>
+    <tr>
+        <td>자동차부품</td>
+    </tr>
+    <tr>
+        <td>전자집적회로</td>
+    </tr>
+</table>
+
+
+
+<h2 id="MINUS"><a href="#MINUS" class="headerlink" title="MINUS"></a>MINUS</h2><ul>
+<li>차집합을 의미한다</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">%</span><span class="token operator">%</span>sql
+
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'한국'</span>
+MINUS <span class="token comment" spellcheck="true">-- 차집합 개념 적용</span>
+<span class="token keyword">SELECT</span> goods
+<span class="token keyword">FROM</span> exp_goods_asia
+<span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'일본'</span>
+</code></pre>
+<pre><code> * oracle://ora_user:***@127.0.0.1:1521/myoracle
+0 rows affected.
+</code></pre>
+<table>
+    <tr>
+        <th>goods</th>
+    </tr>
+    <tr>
+        <td>LCD</td>
+    </tr>
+    <tr>
+        <td>무선송신기 디스플레이 부속품</td>
+    </tr>
+    <tr>
+        <td>철 또는 비합금강</td>
+    </tr>
+    <tr>
+        <td>환식탄화수소</td>
+    </tr>
+    <tr>
+        <td>휴대전화</td>
+    </tr>
+</table>
+
+
+
+<h2 id="집합-연산자의-제한사항"><a href="#집합-연산자의-제한사항" class="headerlink" title="집합 연산자의 제한사항"></a>집합 연산자의 제한사항</h2><ol>
+<li>집합 연산자로 연결되는 각 SELECT문의 SELECT 리스트의 개수와 데이터 타입은 일치해야 한다</li>
+<li>집합 연산자로 SELECT 문을 연결할 때 ORDER BY절은 맨 마지막 문장에서만 사용할 수 있다</li>
+<li>BLOB, CLOB, BFILE 타입의 컬럼에 대해서는 집합 연산자를 사용할 수 없다</li>
+<li>UNION, INTERSECT, MINUS 연산자는 LONG형 컬럼에는 사용할 수 없다</li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

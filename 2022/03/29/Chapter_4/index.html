@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="출처 : 혼자 공부하는 머신러닝+딥러닝
+데이터 불러오기
+컬럼 설명 177p 그림
+
+import pandas as pd
+
+fish = pd.read_csv(&#39;https://bit.ly/fish_csv_data&#39;)
+fish.head()
+
+  
+    
+      
+
+   "/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="SiriN"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Chapter 4장"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="출처 : 혼자 공부하는 머신러닝+딥러닝
+데이터 불러오기
+컬럼 설명 177p 그림
+
+import pandas as pd
+
+fish = pd.read_csv(&#39;https://bit.ly/fish_csv_data&#39;)
+fish.head()
+
+  
+    
+      
+
+   "/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="SiriN&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://SiriN1234.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Chapter 4장 - SiriN&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Chapter 4장</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Posted by Hanjeongin on
+                        
+                        
+                            2022-03-29
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Python/">#Python</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>출처 : 혼자 공부하는 머신러닝+딥러닝</p>
+<h1 id="데이터-불러오기"><a href="#데이터-불러오기" class="headerlink" title="데이터 불러오기"></a>데이터 불러오기</h1><ul>
+<li>컬럼 설명 177p 그림</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+fish <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'https://bit.ly/fish_csv_data'</span><span class="token punctuation">)</span>
+fish<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+  <div id="df-e573fc57-aa15-46d6-a1a5-744320d4011a">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Species</th>
+      <th>Weight</th>
+      <th>Length</th>
+      <th>Diagonal</th>
+      <th>Height</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bream</td>
+      <td>242.0</td>
+      <td>25.4</td>
+      <td>30.0</td>
+      <td>11.5200</td>
+      <td>4.0200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bream</td>
+      <td>290.0</td>
+      <td>26.3</td>
+      <td>31.2</td>
+      <td>12.4800</td>
+      <td>4.3056</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bream</td>
+      <td>340.0</td>
+      <td>26.5</td>
+      <td>31.1</td>
+      <td>12.3778</td>
+      <td>4.6961</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Bream</td>
+      <td>363.0</td>
+      <td>29.0</td>
+      <td>33.5</td>
+      <td>12.7300</td>
+      <td>4.4555</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bream</td>
+      <td>430.0</td>
+      <td>29.0</td>
+      <td>34.0</td>
+      <td>12.4440</td>
+      <td>5.1340</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e573fc57-aa15-46d6-a1a5-744320d4011a')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+<p>  &lt;svg xmlns&#x3D;”<a target="_blank" rel="noopener" href="http://www.w3.org/2000/svg&quot;">http://www.w3.org/2000/svg&quot;</a> height&#x3D;”24px”viewBox&#x3D;”0 0 24 24”<br>       width&#x3D;”24px”&gt;<br>    <path d="M0 0h24v24H0V0z" fill="none"/><br>    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/><br>  </svg><br>      </button></p>
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+<pre><code>  &lt;script&gt;
+    const buttonEl =
+      document.querySelector(&#39;#df-e573fc57-aa15-46d6-a1a5-744320d4011a button.colab-df-convert&#39;);
+    buttonEl.style.display =
+      google.colab.kernel.accessAllowed ? &#39;block&#39; : &#39;none&#39;;
+
+    async function convertToInteractive(key) &#123;
+      const element = document.querySelector(&#39;#df-e573fc57-aa15-46d6-a1a5-744320d4011a&#39;);
+      const dataTable =
+        await google.colab.kernel.invokeFunction(&#39;convertToInteractive&#39;,
+                                                 [key], &#123;&#125;);
+      if (!dataTable) return;
+
+      const docLinkHtml = &#39;Like what you see? Visit the &#39; +
+        &#39;&lt;a target=&quot;_blank&quot; href=https://colab.research.google.com/notebooks/data_table.ipynb&gt;data table notebook&lt;/a&gt;&#39;
+        + &#39; to learn more about interactive tables.&#39;;
+      element.innerHTML = &#39;&#39;;
+      dataTable[&#39;output_type&#39;] = &#39;display_data&#39;;
+      await google.colab.output.renderOutput(dataTable, element);
+      const docLink = document.createElement(&#39;div&#39;);
+      docLink.innerHTML = docLinkHtml;
+      element.appendChild(docLink);
+    &#125;
+  &lt;/script&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+
+
+
+
+<h1 id="데이터-변환"><a href="#데이터-변환" class="headerlink" title="데이터 변환"></a>데이터 변환</h1><ul>
+<li>배열로 변환</li>
+<li>독립변수</li>
+</ul>
+<pre class=" language-python"><code class="language-python">fish_input <span class="token operator">=</span> fish<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Weight'</span><span class="token punctuation">,</span> <span class="token string">'Length'</span><span class="token punctuation">,</span> <span class="token string">'Diagonal'</span><span class="token punctuation">,</span> <span class="token string">'Height'</span><span class="token punctuation">,</span> <span class="token string">'Width'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+fish_input<span class="token punctuation">.</span>shape
+</code></pre>
+<pre><code>(159, 5)
+</code></pre>
+<ul>
+<li>target 배열로 변환</li>
+<li>종속변수</li>
+</ul>
+<pre class=" language-python"><code class="language-python">fish_target <span class="token operator">=</span> fish<span class="token punctuation">[</span><span class="token string">'Species'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="훈련데이터와-테스트데이터"><a href="#훈련데이터와-테스트데이터" class="headerlink" title="훈련데이터와 테스트데이터"></a>훈련데이터와 테스트데이터</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+train_input<span class="token punctuation">,</span> test_input<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    fish_input<span class="token punctuation">,</span> fish_target<span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>표준화 전처리</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
+
+ss <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ss<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+
+train_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+test_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test_input<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_input<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[720.      35.      40.6     16.3618   6.09  ]
+ [500.      45.      48.       6.96     4.896 ]
+ [  7.5     10.5     11.6      1.972    1.16  ]
+ [110.      22.      23.5      5.5225   3.995 ]
+ [140.      20.7     23.2      8.5376   3.2944]]
+[[ 0.91965782  0.60943175  0.81041221  1.85194896  1.00075672]
+ [ 0.30041219  1.54653445  1.45316551 -0.46981663  0.27291745]
+ [-1.0858536  -1.68646987 -1.70848587 -1.70159849 -2.0044758 ]
+ [-0.79734143 -0.60880176 -0.67486907 -0.82480589 -0.27631471]
+ [-0.71289885 -0.73062511 -0.70092664 -0.0802298  -0.7033869 ]]
+[[-0.88741352 -0.91804565 -1.03098914 -0.90464451 -0.80762518]
+ [-1.06924656 -1.50842035 -1.54345461 -1.58849582 -1.93803151]
+ [-0.54401367  0.35641402  0.30663259 -0.8135697  -0.65388895]
+ [-0.34698097 -0.23396068 -0.22320459 -0.11905019 -0.12233464]
+ [-0.68475132 -0.51509149 -0.58801052 -0.8998784  -0.50124996]]
+</code></pre>
+<h1 id="k-최근접-이웃-분류기의-확률-예측"><a href="#k-최근접-이웃-분류기의-확률-예측" class="headerlink" title="k-최근접 이웃 분류기의 확률 예측"></a>k-최근접 이웃 분류기의 확률 예측</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>neighbors <span class="token keyword">import</span> KNeighborsClassifier
+
+kn <span class="token operator">=</span> KNeighborsClassifier<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+kn<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0.8907563025210085
+0.85
+</code></pre>
+<ul>
+<li>182p</li>
+<li>다중분류</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+proba <span class="token operator">=</span> kn<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>test_scaled<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>round<span class="token punctuation">(</span>proba<span class="token punctuation">,</span> decimals <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kn<span class="token punctuation">.</span>classes_<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[0.     0.     1.     0.     0.     0.     0.    ]
+ [0.     0.     0.     0.     0.     1.     0.    ]
+ [0.     0.     0.     1.     0.     0.     0.    ]
+ [0.     0.     0.6667 0.     0.3333 0.     0.    ]
+ [0.     0.     0.6667 0.     0.3333 0.     0.    ]]
+[&#39;Bream&#39; &#39;Parkki&#39; &#39;Perch&#39; &#39;Pike&#39; &#39;Roach&#39; &#39;Smelt&#39; &#39;Whitefish&#39;]
+</code></pre>
+<h1 id="로지스틱-회귀"><a href="#로지스틱-회귀" class="headerlink" title="로지스틱 회귀"></a>로지스틱 회귀</h1><ul>
+<li>중요도 : 최상</li>
+<li>오늘 유튜브 영상 반드시 신청<ul>
+<li>개념 재복습 필요</li>
+</ul>
+</li>
+<li>Why?<ul>
+<li>로지스틱 회귀<ul>
+<li>통계로도 활용 (의학통계)</li>
+<li>머신러닝 분류모형의 기초 모형인데, 성능이 생각보다 괜찮음<ul>
+<li>데이터셋, 수치 데이터 기반</li>
+</ul>
+</li>
+<li>딥러닝 : 초기모형에 해당됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+z <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+phi <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># print(z)</span>
+<span class="token comment" spellcheck="true"># print(phi)</span>
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>z<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">'z'</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">'phi'</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_4/output_15_0.png" alt="png"></p>
+<ul>
+<li>개발자 취업을 원함<ul>
+<li>공부를 별도로 하지 않는다</li>
+</ul>
+</li>
+<li>컨셉만 이해하면 됨</li>
+<li>데이터분석 관련 일하고 싶다<ul>
+<li>반드시 공부를 해야 함</li>
+</ul>
+</li>
+</ul>
+<h1 id="로지스틱-회귀로-이진-분류-수행하기"><a href="#로지스틱-회귀로-이진-분류-수행하기" class="headerlink" title="로지스틱 회귀로 이진 분류 수행하기"></a>로지스틱 회귀로 이진 분류 수행하기</h1><pre class=" language-python"><code class="language-python">char_arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'E'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>char_arr<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[&#39;A&#39; &#39;C&#39;]
+</code></pre>
+<pre class=" language-python"><code class="language-python">bream_smelt_indexes <span class="token operator">=</span> <span class="token punctuation">(</span>train_target <span class="token operator">==</span> <span class="token string">'Bream'</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>train_target <span class="token operator">==</span> <span class="token string">'Smelt'</span><span class="token punctuation">)</span>
+train_bream_smelt <span class="token operator">=</span> train_scaled<span class="token punctuation">[</span>bream_smelt_indexes<span class="token punctuation">]</span>
+target_bream_smelt <span class="token operator">=</span> train_target<span class="token punctuation">[</span>bream_smelt_indexes<span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>p.186</li>
+<li>모형 만들고 예측하기</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> LogisticRegression
+lr <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 왼쪽은 독립변수 오른쪽은 독립변수</span>
+lr<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_bream_smelt<span class="token punctuation">,</span> target_bream_smelt<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>LogisticRegression()
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 예측하기</span>
+<span class="token comment" spellcheck="true"># 클래스로 분류</span>
+<span class="token comment" spellcheck="true"># 확률값 -> 0.5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>train_bream_smelt<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[&#39;Bream&#39; &#39;Smelt&#39; &#39;Bream&#39; &#39;Bream&#39; &#39;Bream&#39;]
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>train_bream_smelt<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>classes_<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[0.99759855 0.00240145]
+ [0.02735183 0.97264817]
+ [0.99486072 0.00513928]
+ [0.98584202 0.01415798]
+ [0.99767269 0.00232731]]
+[&#39;Bream&#39; &#39;Smelt&#39;]
+</code></pre>
+<ul>
+<li>방정식의 각 기울기와 상수를 구하는 코드</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lr<span class="token punctuation">.</span>coef_<span class="token punctuation">,</span> lr<span class="token punctuation">.</span>intercept_<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[[-0.4037798  -0.57620209 -0.66280298 -1.01290277 -0.73168947]] [-2.16155132]
+</code></pre>
+<ul>
+<li>z식</li>
+<li>z값을 출력하자</li>
+</ul>
+<pre class=" language-python"><code class="language-python">decisions <span class="token operator">=</span> lr<span class="token punctuation">.</span>decision_function<span class="token punctuation">(</span>train_bream_smelt<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>decisions<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[-6.02927744  3.57123907 -5.26568906 -4.24321775 -6.0607117 ]
+</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> scipy<span class="token punctuation">.</span>special <span class="token keyword">import</span> expit
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>expit<span class="token punctuation">(</span>decisions<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[0.00240145 0.97264817 0.00513928 0.01415798 0.00232731]
+</code></pre>
+<h2 id="경사하강법이-쓰인-여러-알고리즘"><a href="#경사하강법이-쓰인-여러-알고리즘" class="headerlink" title="경사하강법이 쓰인 여러 알고리즘"></a>경사하강법이 쓰인 여러 알고리즘</h2><ul>
+<li>(이미지, 텍스트) 딥러닝 기초 알고리즘</li>
+<li>트리 알고리즘 + 경사하강법 융합 &#x3D; 부스팅 계열<ul>
+<li>대표 알고리즘 : LightGBM, Xgboost, Catboost</li>
+<li>kaggle 1등으로 자주 쓰인 알고리즘 &#x3D; LightGBM, Xgboost</li>
+<li>하이퍼 파라미터의 갯수가 80개가 넘음</li>
+</ul>
+</li>
+</ul>
+<h1 id="SGDClassifier"><a href="#SGDClassifier" class="headerlink" title="SGDClassifier"></a>SGDClassifier</h1><ul>
+<li>확률적 경사하강법 분류기</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+
+fish <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">"https://bit.ly/fish_csv_data"</span><span class="token punctuation">)</span>
+fish<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 159 entries, 0 to 158
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   Species   159 non-null    object 
+ 1   Weight    159 non-null    float64
+ 2   Length    159 non-null    float64
+ 3   Diagonal  159 non-null    float64
+ 4   Height    159 non-null    float64
+ 5   Width     159 non-null    float64
+dtypes: float64(5), object(1)
+memory usage: 7.6+ KB
+</code></pre>
+<ul>
+<li>배열로 변환하는 코드<ul>
+<li>독립변수 &#x3D; fish_input</li>
+<li>종속변수 &#x3D; fish_target</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python">fish_input <span class="token operator">=</span> fish<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'Weight'</span><span class="token punctuation">,</span> <span class="token string">'Length'</span><span class="token punctuation">,</span> <span class="token string">'Diagonal'</span><span class="token punctuation">,</span> <span class="token string">'Height'</span><span class="token punctuation">,</span> <span class="token string">'Width'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+fish_input<span class="token punctuation">.</span>shape
+
+fish_target <span class="token operator">=</span> fish<span class="token punctuation">[</span><span class="token string">'Species'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_numpy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<ul>
+<li>훈련 세트와 테스트 세트로 분리</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
+
+train_input<span class="token punctuation">,</span> test_input<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> test_target <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>
+    fish_input<span class="token punctuation">,</span> fish_target<span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">42</span>
+<span class="token punctuation">)</span>
+
+train_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_input<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> train_target<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> test_target<span class="token punctuation">.</span>shape
+</code></pre>
+<pre><code>((119, 5), (40, 5), (119,), (40,))
+</code></pre>
+<ul>
+<li>표준화 처리<ul>
+<li>다시 한번 강조하지만 꼭 훈련 세트에서 학습한 통계값으로 테스트 세트도 변환한다</li>
+<li>키워드 : Data Leakage</li>
+<li>데이터 분석 희망자 필수 공부</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> StandardScaler
+
+ss <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ss<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># ss 훈련데이터만 활용해서 학습이 끝난 상태</span>
+<span class="token comment" spellcheck="true"># 표준화 처리를 훈련데이터와 테스트데이터에 동시 적용</span>
+train_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_input<span class="token punctuation">)</span>
+test_scaled <span class="token operator">=</span> ss<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test_input<span class="token punctuation">)</span>
+</code></pre>
+<h1 id="모델-학습"><a href="#모델-학습" class="headerlink" title="모델 학습"></a>모델 학습</h1><ul>
+<li>2개의 매개 변수 지정</li>
+<li>loss &#x3D; “log” &#x3D; 로지스틱 손실 함수로 지정</li>
+<li>max_iter &#x3D; 에포크 횟수 지정</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword">import</span> SGDClassifier
+
+<span class="token comment" spellcheck="true"># 매개변수 지정</span>
+<span class="token comment" spellcheck="true"># 하이퍼 파라미터 설정</span>
+<span class="token comment" spellcheck="true">## 매개변수 값을 dictionary 형태로 추가하는 코드 작성 가능</span>
+<span class="token comment" spellcheck="true">## 입문자들에게는 비추천</span>
+sc <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss <span class="token operator">=</span> <span class="token string">"log"</span><span class="token punctuation">,</span> max_iter <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 모형 학습</span>
+sc<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 스코어 확인(정확도)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>0.8403361344537815
+0.8
+</code></pre>
+<ul>
+<li>적절한 에포크 숫자를 찾자</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+sc <span class="token operator">=</span> SGDClassifier<span class="token punctuation">(</span>loss <span class="token operator">=</span> <span class="token string">"log"</span><span class="token punctuation">,</span> max_iter <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">,</span> tol <span class="token operator">=</span> None<span class="token punctuation">,</span> random_state <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">)</span>
+train_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+test_score <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+classes <span class="token operator">=</span> np<span class="token punctuation">.</span>unique<span class="token punctuation">(</span>train_target<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+  sc<span class="token punctuation">.</span>partial_fit<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">,</span> classes <span class="token operator">=</span> classes<span class="token punctuation">)</span>
+  train_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>train_scaled<span class="token punctuation">,</span> train_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  test_score<span class="token punctuation">.</span>append<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>score<span class="token punctuation">(</span>test_scaled<span class="token punctuation">,</span> test_target<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 정확도 상위 5개 출력</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>train_score<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test_score<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>[0.5294117647058824, 0.6218487394957983, 0.6386554621848739, 0.7310924369747899, 0.7226890756302521]
+[0.65, 0.55, 0.575, 0.7, 0.7]
+</code></pre>
+<ul>
+<li>모형 학습 시각화</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>train_score<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>test_score<span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"Epoch"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">"Accuracy"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<p><img src="/images/Chapter_4/output_43_0.png" alt="png"></p>
+<ul>
+<li>위가 훈련데이터, 밑이 테스트데이터</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2022 SiriN<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
